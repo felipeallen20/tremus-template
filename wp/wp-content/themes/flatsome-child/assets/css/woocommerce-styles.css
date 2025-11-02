@@ -1,0 +1,581 @@
+/* ===== Estilos tarjeta de producto Tremus ===== */
+
+.tremus-product-card {
+  list-style: none;
+  background: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  padding: 10px;
+  margin: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.tremus-product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+}
+
+/* Wrapper interno */
+.tremus-product-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Imagen centrada */
+.tremus-product-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 0 12px 0;
+  min-height: 170px;
+}
+.tremus-product-thumb img {
+  height: 250px;
+  width: auto;
+  object-fit: contain;
+  display:block;
+}
+
+/* Contenido textual */
+.tremus-product-content {
+  text-align: left;
+  margin-bottom: 12px;
+  flex-grow: 1;
+}
+
+.tremus-product-title {
+  font-size: 14px;
+  margin: 6px 0 6px;
+  color: #6f6f6f;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.tremus-product-description {
+  font-size: 13px;
+  margin: 0 0 10px;
+  color: #333333;
+  line-height: 1.4;
+  max-height: 3.0em;
+  overflow: hidden;
+}
+
+.tremus-product-price {
+  font-size: 15px;
+  font-weight: 700;
+  color: #b35f4a;
+  margin-bottom: 10px;
+}
+
+/* Botón personalizado */
+.tremus-product-button-wrap {
+  margin-top: auto;
+}
+
+.tremus-product-add-to-cart {
+  display: inline-block;
+  width: fit-content !important;
+  text-align: left !important;
+  padding: 0px !important;
+  border-radius: 6px;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  font-size: 13px;
+  background: transparent !important;
+  color: #111111 !important;
+  border: none !important;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.tremus-product-add-to-cart:hover {
+  text-decoration: none;
+  opacity: 0.9;
+  background: transparent !important;
+}
+
+/* Compatible con AJAX */
+.tremus-product-add-to-cart.ajax_add_to_cart {
+  /* Mantener compatibilidad con WooCommerce */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tremus-product-thumb { min-height: 140px; }
+  .tremus-product-title { font-size: 14px; }
+  .tremus-product-description { font-size: 13px; }
+  .tremus-product-price { font-size: 15px; }
+}
+
+/* ===== Tremus: Header de la Tienda ===== */
+.tremus-shop-header-container{
+    width: 100%;
+}
+
+.tremus-shop-header {
+  max-width: 1650px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid #d8c5b3;
+  margin: auto;
+  margin-bottom: 25px;
+}
+
+.tremus-shop-header-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.tremus-shop-title {
+  font-size: 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #222;
+  margin: 0;
+}
+
+.tremus-shop-underline {
+  width: 90px;
+  height: 4px;
+  background-color: #bca48c;
+  margin-top: 4px;
+  border-radius: 3px;
+}
+
+/* ===== Panel derecho ===== */
+.tremus-shop-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: #333;
+}
+
+/* Result count */
+.tremus-shop-result-count {
+  font-weight: 500;
+  color: #555;
+}
+
+/* Estilo del select */
+.tremus-shop-ordering select {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 13px;
+  color: #333;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.custom-ordering {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.custom-show{
+    font-size: 16px;
+}
+
+.custom-show span {
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+.custom-show a {
+  color: #777;
+  text-decoration: none;
+  margin: 0 2px;
+  transition: color 0.2s ease;
+}
+
+.custom-show a:hover {
+  color: #000;
+}
+
+.custom-order-select select {
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #333;
+  background: #fff;
+  cursor: pointer;
+  margin-bottom: 0px !important;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .tremus-shop-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .tremus-shop-header-right {
+    margin-top: 10px;
+  }
+}
+
+/*FILTER SHOP*/
+
+.custom-shop-filters {
+  width: 100%;
+  background: #fff;
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.filter-section {
+  margin-bottom: 30px;
+}
+
+.filter-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #9b9b9b;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: #192E41;
+  margin: 8px 0px;
+  padding: 10px 8px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.filter-shipping{
+    background-color: #d1d1d1;
+}
+
+.filter-option label{
+    margin-left: 10px;
+}
+
+.filter-option input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #000; 
+  margin: 0 !important;
+}
+
+.category-filter-list,
+.subcategory-list {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.subcategory-list {
+  margin-left: 20px;
+  border-left: 1px solid #eee;
+  padding-left: 15px;
+}
+
+.filter-option.sub {
+  font-size: 14px;
+  color: #555;
+}
+
+.filter-item {
+  margin-bottom: 10px;
+}
+
+/*Newsletter-shop*/
+
+.newsletter-shop-container{
+  background: #192E41;
+  padding: 24px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.newsletter-shop-content{
+  width: 40%;
+}
+
+.newsletter-shop-title{
+  color: #fff;
+  margin-bottom: 32px;
+}
+
+.newsletter-shop-form{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.newsletter-shop-form button {
+  background: #fff;
+  color: #000;
+  font-size: 14px !important;
+  text-transform: capitalize !important;
+  padding: 12px 24px;
+  border: none;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/*SINGLE PRODUCT*/
+.custom-single-product {
+  padding: 40px 0;
+}
+
+.product-gallery {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.custom-product-header{
+  font-size: 1.4em !important;
+}
+
+.custom-product-header {
+  margin-bottom: 20px;
+}
+
+.product-title {
+  font-size: 2.4em;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.product-sku {
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.product-content-row{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.product-price {
+  font-size: 2.2em;
+  color: #C4B6AB !important;
+  font-weight: 700;
+  margin: 10px 0 20px;
+}
+
+.product-tags span {
+  display: inline-block;
+  background: #f4f4f4;
+  border-radius: 30px;
+  padding: 6px 14px;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.product-meta-icons {
+  list-style: none !important;
+  padding: 0;
+  margin-top: 20px;;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.product-meta-icons li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+  margin-right: 10px;
+  color: #555;
+}
+
+.product-custom-description{
+  color: #192E41;
+}
+
+.custom-product-description {
+  margin-top: 40px;
+}
+
+.product-cart {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: nowrap !important;
+}
+
+.quantity-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.woocommerce-variation-add-to-cart>*, form.cart>*{
+  flex: none !important;
+}
+
+.quantity input.qty {
+  width: 50px;
+  height: 45px;
+  text-align: center;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.quantity .minus,
+.quantity .plus {
+  width: 35px;
+  height: 45px;
+  border: 1px solid #ddd;
+  background: #f9f9f9;
+  font-size: 18px;
+  color: #555;
+}
+
+.quantity .minus:hover,
+.quantity .plus:hover {
+  background: #eaeaea;
+}
+
+.custom-add-to-cart-button {
+  background-color: #63c9c7;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 3px 40px;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+  text-transform: none;
+}
+
+.custom-add-to-cart-button i {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.custom-add-to-cart-button:hover {
+  background-color: #4eb3b1;
+}
+
+.tremus-product-ingredients {
+  padding: 40px 0;
+}
+
+.tremus-ingredients-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.tremus-ingredients-text {
+  flex: 1;
+  color: #333;
+}
+
+.tremus-ingredients-text h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.ingredient-block {
+  margin-bottom: 20px;
+}
+
+.ingredient-block h4 {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.ingredient-block ul {
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.ingredient-block li {
+  line-height: 1.6;
+  margin-bottom: 4px;
+}
+
+.tremus-ingredients-image {
+  flex: 0 0 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tremus-ingredients-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.product-tags {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+
+.product-tags img.product-tag-image {
+	max-width: 75px;
+	object-fit: contain;
+}
+
+.available-stock-dot{
+  width: 18px;
+  height: 18px;
+  background: #10d310;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.products.columns-4 {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	gap: 20px;
+}
+
+.products.columns-4 li.product {
+	width: 100% !important;
+	margin: 0 !important;
+}
+
+.tremus-precio-unidad {
+	display: block;
+	font-size: 0.9em;
+	color: #fff;
+	margin-top: 2px;
+  background: #7a7a7a;
+  border-radius: 3px;
+  padding: 0px 8px;
+  width: fit-content;
+}

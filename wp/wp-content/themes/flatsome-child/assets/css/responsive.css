@@ -1,0 +1,66 @@
+/* Móviles */
+@media (max-width: 600px) {
+  /* Estilos para pantallas móviles */
+  .header-main{
+    background: #152635;
+    height: 85px !important;
+  }
+
+  .location-container .header-text, .login-container .header-text{
+    display: none !important;
+  }
+
+  .submenu-btn{
+    font-size: 1.8em !important;
+    padding: 6px !important;
+  }
+
+  .header-logo {
+    display: none !important;
+  }
+  
+  .tremus-cart-widget{
+    width: 120px;
+  }
+
+  .tremus-cart-widget .cart-top{
+    padding: 3px 0px;
+  }
+
+  .cart-header-icon{
+    width: 18px;
+  }
+
+  .cart-count{
+    top: -4px;
+    right: -8px;
+    width: 15px;
+    height: 15px;
+    font-size: 11px;
+  }
+
+  .cart-total{
+    font-size: 1.2em;
+  }
+
+  .cart-bottom{
+    font-size: 0.8em;
+  }
+
+  .location-container .utility-icon-light, .login-container .utility-icon-light{
+    position: absolute;
+  }
+
+  .login-container .utility-icon-light{
+    right: 140px;
+  }
+
+  .location-container .utility-icon-light{
+    right: 170px;
+  }
+}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+  /* Estilos para tablets */
+}

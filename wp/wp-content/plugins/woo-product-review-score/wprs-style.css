@@ -1,0 +1,53 @@
+.wprs-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  user-select: none;
+  font-family: 'Inter', sans-serif;
+}
+
+.wprs-stars {
+  display: flex;
+  gap: 4px;
+}
+
+.wprs-star {
+  font-size: 48px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.1s ease;
+}
+
+/* ⭐ Colores activos y hover */
+.wprs-star.hovered,
+.wprs-star.filled {
+  color: #ffcc00;
+}
+
+.wprs-star:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* ⭐ versión simple */
+.wprs-simple .wprs-star {
+  font-size: 18px;
+  cursor: default;
+}
+
+/* 📊 texto debajo (solo versión completa) */
+.wprs-meta {
+  font-size: 14px;
+  color: #555;
+}
+
+.wprs-rate-here {
+  font-size: 13px;
+  color: #777;
+}
+
+.wprs-already {
+  font-size: 13px;
+  color: #999;
+  font-style: italic;
+}

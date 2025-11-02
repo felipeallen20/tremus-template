@@ -1,0 +1,672 @@
+/*CATEGORIES*/
+
+.tremus-featured-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.tremus-category {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.tremus-category:hover {
+  transform: scale(1.05);
+}
+
+.tremus-category-image {
+  position: relative;
+}
+
+.tremus-category-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 🔹 Nombre centrado con fondo blanco semitransparente */
+.tremus-category-name {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.70);
+  color: #000;
+  font-weight: 700;
+  font-size: 1.4em;
+  padding: 6px 10px;
+  pointer-events: none;
+}
+
+/* 🔴 Tooltip rojo visible encima sin pseudo-elementos */
+.tremus-category-tooltip {
+  position: absolute;
+  bottom: 80%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  background-color: red;
+  color: #fff;
+  padding: 4px 6px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  white-space: nowrap;
+  z-index: 10;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Mostrar tooltip al hover */
+.tremus-category:hover .tremus-category-tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(-15px);
+}
+
+/* ===== GRID DE PRODUCTOS ===== */
+.tremus-featured-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+/* ===== TARJETA ===== */
+.tremus-product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+  max-height: 380px;
+}
+
+.tremus-product:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.tremus-product-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* ===== CONTENIDO ===== */
+.tremus-product-content{
+  margin-top: 10px;
+}
+
+.tremus-product-title {
+  font-size: 15px;
+  color: #6e6e6e !important;
+  margin: 0px !important;
+  min-height: 40px;
+  text-align: start;
+}
+
+.tremus-product-price {
+  font-size: 18px;
+  color: #C4B6AB !important;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: start;
+}
+
+.tremus-discount{
+  color: red;
+}
+
+/* ===== CONTADOR Y BOTÓN ===== */
+.tremus-product-qty-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: auto;
+}
+
+/* Caja del contador */
+.tremus-product-qty {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 80px;
+  height: 40px;
+  background: #fff;
+}
+
+/* Input */
+.tremus-qty-input {
+  width: 50px;
+  border: none;
+  text-align: center;
+  font-size: 15px;
+  outline: none;
+  background: transparent;
+  color: #7b6f68;
+  padding: 0;
+  margin: 0;
+}
+
+/* Quitar spin nativo */
+.tremus-qty-input::-webkit-outer-spin-button,
+.tremus-qty-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.tremus-qty-input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Botones ▲ ▼ */
+.tremus-qty-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid #ddd;
+  background: #fafafa;
+}
+
+.tremus-qty-btn {
+  all: unset;
+  cursor: pointer;
+  width: 25px;
+  height: 50%;
+  text-align: center;
+  font-size: 10px;
+  color: #b19a86;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.15s;
+}
+
+.tremus-qty-btn:hover {
+  background: #f0f0f0;
+}
+
+/* ===== BOTÓN DE AGREGAR ===== */
+.tremus-add-btn .add-to-cart-btn {
+  background-color: #63CCCA;
+  color: white;
+  text-decoration: none;
+  padding: 9px 40px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  display: inline-block;
+  height: 40px;
+  line-height: 22px;
+  transition: background 0.2s;
+  border: none;
+}
+
+.tremus-add-btn .add-to-cart-btn:hover {
+  background-color: #4FB7B5;
+}
+
+/*marcas*/
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  justify-items: center;
+  align-items: center;
+  padding-top: 60px;
+}
+
+.brands-grid img {
+  width: 120px;
+  height: auto;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.brands-grid img:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+  .brands-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .brands-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .brands-grid img {
+    width: 100px;
+  }
+}
+
+/*BUSCADOR*/
+
+.custom-search-container {
+  position: relative;
+  margin: 20px auto;
+}
+
+.custom-search-box {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+#custom-product-search {
+  flex: 1;
+  padding: 10px 12px;
+  outline: none;
+  font-size: 15px;
+  width: 800px;
+}
+
+#custom-search-button {
+  background-color: #e5e5e5; /* gris claro */
+  border: none;
+  padding: 11px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#custom-search-button i {
+  color: #333; /* gris oscuro tirando a negro */
+  font-size: 16px;
+}
+
+#custom-search-button:hover {
+  background-color: #dcdcdc;
+}
+
+#custom-search-results {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-right: 1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 9999;
+}
+
+#custom-search-results li {
+  padding: 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+#custom-search-results li a {
+  text-decoration: none;
+  color: #444;
+  display: block;
+}
+
+#custom-search-results li a:hover {
+  background: #f7f7f7;
+  color: #000;
+}
+
+/*CART ICON*/
+
+.tremus-cart-widget {
+  background-color: #e9e3df;
+  text-align: center;
+  width: fit-content;
+  font-family: "Open Sans", sans-serif;
+}
+
+.tremus-cart-widget .cart-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 5px 0px;
+}
+
+.cart-icon-container {
+  position: relative;
+}
+
+.cart-header-icon{
+  width: 26px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -12px;
+  background-color: #e0245e;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-total {
+  color: #152635;
+  font-size: 1.7em;
+  font-weight: 700;
+  margin: 0px 10px;
+}
+
+.cart-bottom {
+  margin-top: 6px;
+  background-color: #d9d0ca;
+  color: #152635;
+  font-size: 1.2em;
+  font-weight: 500;
+  padding: 2px 8px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tremus-cart-widget .cart-bottom.free-shipping {
+  background-color: #2fc5ca; 
+  color: #fff;
+}
+
+.tremus-cart-widget.hide-shipping .cart-bottom {
+  display: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+
+.tremus-cart-widget.hide-shipping .cart-top{
+  padding-left: 5px; 
+}
+
+/*SUBMENU*/
+.tremus-submenu-wrapper {
+  position: relative;
+  z-index: 9999;
+}
+
+/* Fondo semitransparente */
+.submenu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(21, 38, 53, 0.6);
+  display: none;
+  z-index: 9998;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.submenu-overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Contenedor lateral del menú */
+.submenu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 380px;
+  height: 100vh;
+  background: #f8f7f6;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 9999;
+  overflow-y: auto;
+  padding-top: 60px;
+}
+
+.submenu-container.open {
+  transform: translateX(0);
+}
+
+.submenu-list,
+.submenu-children {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.submenu-item {
+  border-bottom: 1px solid #e0dcd9;
+  margin: 0;
+  margin-left: 0 !important;
+}
+
+.submenu-link-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.submenu-item a {
+  display: block;
+  padding: 8px 20px;
+  color: #152635;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s ease;
+  flex: 1;
+}
+
+.submenu-item a:hover {
+  background: #eae5e1;
+}
+
+/* Botón de despliegue */
+.submenu-toggle {
+  background: none;
+  border: none;
+  color: #152635;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 6px 20px;
+  transition: transform 0.3s ease;
+  margin: 0;
+}
+
+.submenu-toggle.rotate i {
+  transform: rotate(180deg);
+}
+
+/* Submenús */
+.submenu-children {
+  display: none;
+}
+
+.submenu-children.open {
+  display: block;
+  margin: 0 !important;
+}
+
+.submenu-children.open li{
+  border-bottom: 1px solid #a7a7a7;
+  margin: 0 !important;
+  background: #eae5e1;
+}
+
+.submenu-children.open li a{
+  padding-left: 40px !important;
+}
+
+/*BANNER PROMO*/
+
+.promo-banner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(21, 38, 53, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+.promo-banner-modal {
+  position: relative;
+  background: transparent;
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.promo-banner-modal img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+.promo-banner-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  border: none;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  padding: 0 !important;
+}
+
+/*Modal comprar hasta completar el envio*/
+
+.envio-modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(21, 38, 53, 0.6);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 9999;
+}
+.envio-modal-content {
+  background: #fff;
+  padding: 40px 20px;
+  max-width: 1180px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+}
+.envio-close {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 22px; cursor: pointer;
+}
+.envio-header {
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  gap: 10px; margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #152635;
+}
+.envio-productos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+.envio-producto {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+}
+.envio-producto img {
+  width: 100%; border-radius: 6px;
+}
+.envio-producto button {
+  background: #00a8a8;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+.envio-header-description{
+  font-size: 1.2em;
+  color: #152635;
+}
+
+#faltante-envio{
+  background: #d1d1d1;
+  padding: 0px 5px;
+}
+
+/* === Productos vistos recientemente === */
+.recently-viewed-products-row{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0px;
+}
+
+.recently-viewed-product{
+  display: flex;
+  align-items: center;
+  background-color: #e9e9e9;
+  width: 20%;
+  height: 85px;
+  padding: 10px;
+}
+
+.recently-viewed-product-link{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.recently-viewed-product-left{
+  width: 25%;
+}
+
+.recently-viewed-product-right{
+  width: 75%;
+}
+
+.recently-viewed-product-image img{
+  max-width: 90%;
+}
+
+.recently-viewed-product-title{
+  font-size: 0.8em;
+}
+
+.recently-viewed-product-price{
+  font-size: 0.8em;
+  color: #444;
+}

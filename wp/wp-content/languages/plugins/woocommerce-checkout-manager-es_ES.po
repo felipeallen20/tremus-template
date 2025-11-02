@@ -1,0 +1,1537 @@
+# Translation of Plugins - Checkout Field Manager (Checkout Manager) for WooCommerce - Stable (latest release) in Spanish (Spain)
+# This file is distributed under the same license as the Plugins - Checkout Field Manager (Checkout Manager) for WooCommerce - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2025-01-03 12:31:22+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.3\n"
+"Language: es\n"
+"Project-Id-Version: Plugins - Checkout Field Manager (Checkout Manager) for WooCommerce - Stable (latest release)\n"
+
+#: vendor_packages/wp-notice-plugin-promote.php:46
+msgid "Hello! %2$s We've spent countless hours developing this free plugin for you and would really appreciate it if you could drop us a quick rating. Your feedback is extremely valuable to us. %3$s It helps us to get better. Thanks for using %1$s."
+msgstr "¡Hola %2$s! Hemos pasado incontables horas desarrollando este complemento gratuito para ti, y realmente apreciaríamos si nos dejas una calificación rápida. Tu opinión es muy importante para nosotros. %3$s Nos ayuda a mejorar. Gracias por usar %1$s."
+
+#: jetpack_vendor/quadlayers/wp-notice-plugin-promote/src/templates/notice.php:33
+msgid "I would not"
+msgstr "No, gracias"
+
+#: jetpack_vendor/quadlayers/wp-notice-plugin-promote/src/templates/notice.php:32
+msgid "I would not, close this alert."
+msgstr "No, gracias, cierra esta alerta."
+
+#: jetpack_vendor/quadlayers/wp-notice-plugin-promote/src/Load.php:410
+msgid "Get more info"
+msgstr "Obtener más información"
+
+#: jetpack_vendor/quadlayers/wp-notice-plugin-promote/src/Load.php:398
+msgid "Review Here"
+msgstr "Valorar aquí"
+
+#: lib/view/backend/admin-menu/user-files.php:49
+#: templates/my-account/form-edit-address-images.php:56
+msgid "No files have been uploaded to this customer."
+msgstr "No se han subido archivos a este cliente."
+
+#: lib/view/backend/admin-menu/user-files.php:10
+#: templates/my-account/form-edit-address-images.php:13
+msgid "Field"
+msgstr "Campo"
+
+#: lib/view/backend/admin-menu/user-files.php:5
+msgid "User-uploaded files"
+msgstr "Archivos subidos por el usuario"
+
+#: vendor_packages/wp-notice-plugin-promote.php:72
+msgid "Today we have a special gift for you. Use the coupon code %1$s within the next 48 hours to receive a %2$s discount on the premium version of the %3$s plugin."
+msgstr "Hoy tenemos un regalo especial para ti. Utiliza el código de cupón %1$s en las próximas 48 horas para recibir un descuento del %2$s en la versión premium del plugin %3$s."
+
+#: lib/view/backend/pages/modals/parts/panel-timepicker.php:30
+msgid "24-hour format"
+msgstr "Formato de 24 horas"
+
+#: lib/view/backend/pages/modals/parts/panel-price.php:11
+msgid "billing_wooccmID"
+msgstr "billing_wooccmID"
+
+#: lib/view/backend/pages/modals/parts/panel-filter.php:28
+msgid "If user is not logged in will appear as customer."
+msgstr "Si el usuario no está conectado, aparecerá como cliente."
+
+#: lib/class-upload.php:132 lib/controller/class-order.php:113
+msgid "This is not your order."
+msgstr "Este no es tu pedido."
+
+#: lib/class-upload.php:122 lib/controller/class-order.php:103
+msgid "You must be logged in."
+msgstr "Debes estar conectado."
+
+#: lib/view/backend/pages/modals/parts/panel-filter.php:120
+msgid "Hide for subtype/s"
+msgstr "Ocultar para subtipo/s"
+
+#: lib/view/backend/pages/modals/parts/panel-filter.php:108
+#: lib/view/backend/pages/modals/parts/panel-filter.php:121
+msgid "Filter by product subtype"
+msgstr "Filtrar por subtipo de producto"
+
+#: lib/view/backend/pages/modals/parts/panel-filter.php:107
+msgid "Show for subtype/s"
+msgstr "Mostrar para subtipo/s"
+
+#: lib/view/backend/pages/modals/parts/panel-filter.php:94
+msgid "Hide for product type"
+msgstr "Ocultar para tipo de producto"
+
+#: lib/view/backend/pages/modals/parts/panel-filter.php:85
+#: lib/view/backend/pages/modals/parts/panel-filter.php:95
+msgid "Filter by product type"
+msgstr "Filtrar por tipo de producto"
+
+#: lib/view/backend/pages/modals/parts/panel-filter.php:84
+msgid "Show for product type"
+msgstr "Mostrar para tipo de producto"
+
+#: lib/controller/class-field-additional.php:238
+#: lib/controller/class-field-billing.php:64
+#: lib/controller/class-field-shipping.php:69
+msgid "Virtual & Downloadable"
+msgstr "Virtual y descargable"
+
+#: lib/controller/class-field-additional.php:237
+#: lib/controller/class-field-billing.php:63
+#: lib/controller/class-field-shipping.php:68
+msgid "Downloadable"
+msgstr "Descargable"
+
+#: lib/controller/class-field-additional.php:236
+#: lib/controller/class-field-billing.php:62
+#: lib/controller/class-field-shipping.php:67
+msgid "Virtual"
+msgstr "Virtual"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:229
+msgid "Complete the field with previous user data on checkout load."
+msgstr "Completa el campo con los datos anteriores del usuario anterior en la página de finalizar compra."
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:224
+msgid "Previous selection"
+msgstr "Selección anterior"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:214
+msgid "%s"
+msgstr "%s"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:211
+msgid "Autocomplete attribute"
+msgstr "Rellenar automáticamente el atributo"
+
+#: lib/view/frontend/class-fields-validation.php:79
+msgid "%1$s requires at least %2$s characters"
+msgstr "%1$s necesita al menos %2$s caracteres"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:167
+msgid "Enter a minlength value (optional)"
+msgstr "Introduce un valor para la longitud mínima (opcional)"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:166
+msgid "Minlength"
+msgstr "Longitud mínima"
+
+#: vendor_packages/wp-notice-plugin-promote.php:34
+msgid "Perfect WooCommerce Brands the perfect tool to improve customer experience on your site. It allows you to highlight product brands and organize them in lists, dropdowns, thumbnails, and as a widget."
+msgstr "Perfect WooCommerce Brands, la herramienta perfecta para mejorar la experiencia del usuario en tu sitio. Te permite destacar marcas de productos y organizarlas en listas, desplegables, miniaturas y como widget."
+
+#: jetpack_vendor/quadlayers/wp-notice-plugin-required/src/Load.php:111
+msgid "The %1$s is not working because you need to install the %2$s plugin. "
+msgstr "%1$s no está funcionando porque tienes que instalar el plugin %2$s. "
+
+#: jetpack_vendor/quadlayers/wp-notice-plugin-required/src/Load.php:110
+msgid "Install % s"
+msgstr "Instalar % s"
+
+#: jetpack_vendor/quadlayers/wp-notice-plugin-required/src/Load.php:97
+msgid "The %1$s is not working because you need to activate the %2$s plugin. "
+msgstr "%1$s no está funcionando porque tienes que activar el plugin %2$s . "
+
+#: jetpack_vendor/quadlayers/wp-notice-plugin-required/src/Load.php:96
+msgid "Activate % s"
+msgstr "Activar % s"
+
+#: jetpack_vendor/quadlayers/wp-notice-plugin-promote/src/Load.php:309
+msgid "Notice index %s removed"
+msgstr "Aviso del que el índice de %s se ha eliminado"
+
+#: jetpack_vendor/quadlayers/wp-notice-plugin-promote/src/Load.php:305
+msgid "Unknow notice index %s"
+msgstr "Aviso de índice %s desconocido"
+
+#. translators: 1: wp_default_scripts. 2: Name of the domain being aliased.
+#: jetpack_vendor/automattic/jetpack-assets/src/class-assets.php:580
+msgid "Textdomain aliases should be registered before the %1$s hook. This notice was triggered by the %2$s domain."
+msgstr "Los alias de los dominios de texto deben registrarse antes del gancho de acción %1$s. Este aviso ha sido activado por el dominio %2$s."
+
+#. translators: %s is the script handle.
+#: jetpack_vendor/automattic/jetpack-assets/src/class-assets.php:407
+msgid "Script \"%s\" depends on wp-i18n but does not specify \"textdomain\""
+msgstr "El script «%s» depende de wp-i18n, pero no especifica «textdomain»"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:32
+msgid "Is not possible to change state field type."
+msgstr "No es posible cambiar el tipo de campo de provincia."
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:173
+msgid "Enter a regex to validate input data"
+msgstr "Introduce un regex para validar los datos introducidos"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:172
+msgid "Validate Regex"
+msgstr "Validación Regex"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:73
+msgid "Max of each file to upload. It can't exceed the current WordPress max file size: %s"
+msgstr "Máximo por archivo a subir. No puede exceder el tamaño máximo de archivo actual de WordPress: %s"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:71
+msgid "File Max Size (Kb)"
+msgstr "Tamaño máximo de archivo (Kb)"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:67
+msgid "Max number of files to upload."
+msgstr "Número máximo de archivos que se pueden subir."
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:65
+msgid "File Limit"
+msgstr "Límite de archivos"
+
+#: jetpack_vendor/quadlayers/wp-notice-plugin-promote/src/Traits/PluginActions.php:43
+msgid "Install"
+msgstr "Instalar"
+
+#: jetpack_vendor/quadlayers/wp-notice-plugin-promote/src/Traits/PluginActions.php:36
+msgid "Activate"
+msgstr "Activar"
+
+#: vendor_packages/wp-notice-plugin-promote.php:25
+msgid "Direct Checkout for WooCommerce allows you to reduce the steps in the checkout process by skipping the shopping cart page. This can encourage buyers to shop more and quickly. You will increase your sales reducing cart abandonment."
+msgstr "Direct Checkout para WooCommerce permite reducir los pasos del proceso de compra saltándose la página del carrito de la compra. Esto puede animar a los compradores a comprar más y rápidamente. Aumentarás tus ventas reduciendo el abandono del carrito."
+
+#: vendor_packages/wp-notice-plugin-promote.php:87
+#: vendor_packages/wp-notice-plugin-promote.php:101
+msgid "Hello! We want to invite you to try our %s plugin!"
+msgstr "¡Hola! ¡Queremos invitarte a probar nuestro plugin %s!"
+
+#: vendor_packages/wp-notice-plugin-promote.php:67
+msgid "Hello! We have a special gift!"
+msgstr "¡Hola! ¡tenemos un regalo especial!"
+
+#: lib/view/backend/pages/modals/parts/info.php:47
+msgid "None"
+msgstr "Ninguno"
+
+#. Description of the plugin
+#: woocommerce-checkout-manager.php
+msgid "Manage and customize WooCommerce Checkout fields (Add, Edit, Delete or re-order fields)."
+msgstr "Gestiona y personaliza los campos de pago de WooCommerce (añadir, editar, borrar y reordenar los campos)."
+
+#: jetpack_vendor/quadlayers/wp-dashboard-widget-news/src/Load.php:125
+msgid "Read more like this on our blog"
+msgstr "Lee más como esto en nuestro blog"
+
+#: jetpack_vendor/quadlayers/wp-dashboard-widget-news/src/Load.php:94
+msgid "Untitled"
+msgstr "Sin título"
+
+#: jetpack_vendor/quadlayers/wp-dashboard-widget-news/src/Load.php:71
+msgid "More products"
+msgstr "Más productos"
+
+#: jetpack_vendor/quadlayers/wp-dashboard-widget-news/src/Load.php:68
+msgid "Hi! We are Quadlayers! We’re a team of international people who have been working in the WordPress sphere for the last ten years."
+msgstr "¡Hola! ¡Somos QuadLayers! Somos un equipo internacional de gente que ha estado trabajando en la esfera de WordPress durante los últimos diez años."
+
+#: jetpack_vendor/quadlayers/wp-dashboard-widget-news/src/Load.php:148
+#: jetpack_vendor/quadlayers/wp-dashboard-widget-news/src/Load.php:154
+msgid "An error has occurred, which probably means the feed is down. Try again later"
+msgstr "Ha ocurrido un error, que probablemente significa que el feed está caído. Inténtalo de nuevo más tarde"
+
+#: lib/view/backend/pages/modals/parts/panel-timepicker.php:32
+msgid "Time Format AM/PM"
+msgstr "Formato de hora AM/PM"
+
+#: lib/view/backend/pages/parts/loop.php:11
+msgid "Disallow floating elements on the left and right side of this field."
+msgstr "No permitir elementos flotantes en el lado izquierdo y derecho de este campo."
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:161
+msgid "Enter a maxlength value (optional)"
+msgstr "Introduce un valor para la longitud máxima (opcional)"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:160
+msgid "Maxlength"
+msgstr "Longitud máxima"
+
+#. Plugin URI of the plugin
+#: woocommerce-checkout-manager.php
+msgid "https://quadlayers.com/products/woocommerce-checkout-manager/"
+msgstr "https://quadlayers.com/products/woocommerce-checkout-manager/"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:151
+msgid "Number"
+msgstr "Número"
+
+#: lib/controller/class-controller.php:23
+msgid "Access denied"
+msgstr "Acceso denegado"
+
+#: lib/controller/class-controller.php:19
+msgid "Please, reload page"
+msgstr "Por favor, recarga la página"
+
+#: lib/controller/class-email.php:68
+msgid "Show the selected fields in the email."
+msgstr "Mostrar los campos seleccionados en el correo electrónico."
+
+#: lib/controller/class-email.php:36 lib/controller/class-email.php:49
+#: lib/controller/class-email.php:81
+msgid "Allow customers to upload files in the email."
+msgstr "Permite a los clientes subir archivos en el correo electrónico."
+
+#: lib/controller/class-advanced.php:64
+msgid "Include custom fields in CSV export files generated by WooCommerce Customer / Order / Coupon Export."
+msgstr "Incluir campos personalizados en los archivos de exportación en CSV generados por el cliente/pedido/cupón de WooCommerce."
+
+#: lib/controller/class-advanced.php:63
+msgid "Export custom fields"
+msgstr "Exportar campos personalizados"
+
+#: lib/view/backend/pages/modals/parts/panel-datepicker.php:7
+msgid "Enhance date behaviour with datepicker."
+msgstr "Mejora el comportamiento de las fechas en el selector de fechas."
+
+#: lib/view/backend/pages/modals/parts/panel-timepicker.php:7
+msgid "Enhance time behaviour with timepicker."
+msgstr "Mejora el comportamiento de las horas en el selector de horas."
+
+#: lib/view/backend/pages/modals/parts/panel-datepicker.php:5
+#: lib/view/backend/pages/modals/parts/panel-timepicker.php:5
+msgid "Enhance"
+msgstr "Mejorar"
+
+#: lib/view/backend/pages/modals/parts/tabs.php:16
+msgid "Filter"
+msgstr "Filtrar"
+
+#: lib/view/backend/pages/modals/parts/panel-filter.php:7
+#: lib/view/backend/pages/modals/parts/panel-general.php:154
+msgid "maximum"
+msgstr "máximo"
+
+#: lib/view/backend/pages/modals/parts/panel-filter.php:6
+#: lib/view/backend/pages/modals/parts/panel-general.php:153
+msgid "minimum"
+msgstr "mínimo"
+
+#: lib/view/backend/pages/modals/parts/panel-filter.php:4
+msgid "Cart subtotal"
+msgstr "Subtotal del carrito"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:127
+msgid "Button URL."
+msgstr "URL del botón."
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:126
+msgid "URL"
+msgstr "URL"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:120
+msgid "Alt"
+msgstr "Alt"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:110
+msgid "Message content."
+msgstr "Contenido del mensaje."
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:109
+msgid "Message content"
+msgstr "Contenido del mensaje"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:108
+msgid "Message"
+msgstr "Mensaje"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:105
+#: lib/view/backend/pages/modals/parts/panel-general.php:122
+msgid "Message alert type."
+msgstr "Tipo de alerta del mensaje."
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:103
+msgid "Error"
+msgstr "Error"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:102
+msgid "Success"
+msgstr "Correcto"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:101
+msgid "Info"
+msgstr "Información"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:91
+msgid "Description of the checkout field"
+msgstr "Descripción del campo de finalizar compra"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:90
+msgid "Description"
+msgstr "Descripción"
+
+#: lib/view/backend/pages/modals/parts/panel-display.php:30
+msgid "Hide this field on the order invoice"
+msgstr "Oculta este campo en la factura del pedido"
+
+#: lib/view/backend/pages/modals/parts/panel-display.php:28
+msgid "Hide on invoices"
+msgstr "Ocultar en las facturas"
+
+#: lib/controller/class-email.php:64 lib/controller/class-order.php:261
+#: lib/view/backend/admin-menu/user-files.php:3
+#: templates/my-account/form-edit-address-images.php:3
+#: templates/order/order-upload-files.php:3
+msgid "Uploaded files"
+msgstr "Archivos subidos"
+
+#: lib/controller/class-checkout.php:245
+msgid "Remove order notes from checkout page."
+msgstr "Elimina las notas del pedido en la página de pago."
+
+#: lib/view/backend/pages/modals/parts/panel-display.php:18
+msgid "Hide this field on the user order"
+msgstr "Ocultar este campo en el pedido del usuario"
+
+#: lib/view/backend/pages/modals/parts/panel-display.php:16
+msgid "Hide on orders"
+msgstr "Ocultar en los pedidos"
+
+#: lib/view/backend/pages/modals/parts/panel-datepicker.php:43
+msgid "Between days"
+msgstr "Entre días"
+
+#: lib/view/backend/pages/modals/parts/panel-display.php:24
+msgid "Hide this field on the user email"
+msgstr "Ocultar este campo en el correo electrónico del usuario"
+
+#: lib/view/backend/pages/modals/parts/panel-display.php:22
+msgid "Hide on emails"
+msgstr "Ocultar en los correos electrónicos"
+
+#: lib/controller/class-email.php:108 lib/view/backend/pages/email.php:2
+msgid "Email"
+msgstr "Correo electrónico"
+
+#: jetpack_vendor/quadlayers/wp-plugin-suggestions/src/Table.php:150
+msgctxt "Plugin Installer"
+msgid "Favorites"
+msgstr "Favoritos"
+
+#: jetpack_vendor/quadlayers/wp-plugin-suggestions/src/Table.php:149
+msgctxt "Plugin Installer"
+msgid "Recommended"
+msgstr "Recomendado"
+
+#: jetpack_vendor/quadlayers/wp-plugin-suggestions/src/Table.php:148
+msgctxt "Plugin Installer"
+msgid "Popular"
+msgstr "Popular"
+
+#: jetpack_vendor/quadlayers/wp-plugin-suggestions/src/Table.php:147
+msgctxt "Plugin Installer"
+msgid "Featured"
+msgstr "Destacado"
+
+#: jetpack_vendor/quadlayers/wp-plugin-suggestions/src/Table.php:145
+msgctxt "Plugin Installer"
+msgid "Beta Testing"
+msgstr "Pruebas beta"
+
+#: jetpack_vendor/quadlayers/wp-plugin-suggestions/src/Table.php:142
+msgid "Search Results"
+msgstr "Resultados de la búsqueda"
+
+#: lib/view/backend/pages/parts/header.php:5
+msgid "Purchase"
+msgstr "Comprar"
+
+#: jetpack_vendor/quadlayers/wp-plugin-suggestions/src/view/suggestions.php:53
+#: lib/view/backend/pages/parts/header.php:3
+msgid "Thanks for using our product! We recommend these extensions that will add new features to stand out your business and improve your sales."
+msgstr "¡Gracias por usar nuestro producto! Recomendamos estas extensiones que añadirán nuevas características para hacer destacar tu negocio y mejorar tus ventas."
+
+#: lib/view/backend/pages/premium.php:59
+msgid "This option allows you to add a search field to filter the options based on the selected values."
+msgstr "Esta opción te permite añadir un campo de búsqueda para filtrar las opciones basadas en los valores seleccionados."
+
+#: lib/view/backend/pages/premium.php:57
+msgid "Allow filtering on admin list orders"
+msgstr "Permitir filtrado en la lista de pedidos de la administración"
+
+#: lib/view/backend/pages/premium.php:53
+msgid "This option allows you to sort the WooCommerce orders list based on the field values."
+msgstr "Esta opción te permite ordenar la lista de pedidos de WooCommerce basándose en los valores del campo."
+
+#: lib/view/backend/pages/premium.php:51
+msgid "Allow sorting on admin list orders"
+msgstr "Permitir orden en la lista de pedidos de la administración"
+
+#: lib/view/backend/pages/premium.php:47
+msgid "This option allows you to display the fields in the WooCommerce order list."
+msgstr "Esta opción te permite mostrar los campos en la lista de pedidos de WooCommerce."
+
+#: lib/view/backend/pages/premium.php:45
+msgid "Display on admin list orders"
+msgstr "Mostrar en la lista de pedidos de la administración"
+
+#: lib/view/backend/pages/premium.php:30
+msgid "The enhance options allow you to improve the behavior of the select and multiselect fields with the select2 jquery plugin."
+msgstr "Las opciones de mejora te permiten mejorar el comportamiento de los campos de selección y selección múltiple con el plugin select2 jquery. "
+
+#: lib/view/backend/pages/premium.php:28
+msgid "Enhance select fields"
+msgstr "Mejorar campos de selección"
+
+#: lib/view/backend/pages/premium.php:24
+msgid "By default all fields attached to the billing or shipping sections are included in the edit address area of the user account page. With the premium version, you can hide the fields on the checkout or my account page."
+msgstr "Por defecto, todos los campos adjuntos a las secciones de facturación o envío se incluyen en el área de edición de la dirección de la página de la cuenta de usuario. Con la versión premium puedes ocultar los campos en la página de finalizar compra o mi cuenta."
+
+#: lib/view/backend/pages/premium.php:22
+msgid "Remove account fields"
+msgstr "Quitar campos de la cuenta"
+
+#: lib/view/backend/pages/premium.php:18
+msgid "%s allows you to include fees to each custom or core field. Fees can be fixed or percentage amounts based on checkout total."
+msgstr "%s te permite incluir cuotas a cada campo personalizado o del núcleo. Las cuotas pueden ser en cantidades fijas o de porcentaje basados en el total al finalizar compra."
+
+#: lib/view/backend/pages/premium.php:16
+msgid "Add checkout fees"
+msgstr "Añadir cuotas al finalizar compra"
+
+#: lib/view/backend/pages/premium.php:12
+msgid "Get Support"
+msgstr "Obtener soporte"
+
+#: lib/view/backend/pages/premium.php:11
+#: vendor_packages/wp-notice-plugin-promote.php:61
+msgid "Purchase Now"
+msgstr "Comprar ahora"
+
+#: lib/view/backend/pages/premium.php:8
+msgid "%s allows you to customize, add, edit and delete fields displayed on the checkout page. With the premium version you can also create conditional fields and include custom fees based on the checkout fields."
+msgstr "%s te permite personalizar, añadir, editar y borrar campos mostrados en la página de finalizar compra. Con la versión premium también puedes crear campos condicionales e incluir cuotas personalizadas basadas en los campos de finalizar compra."
+
+#: lib/view/backend/pages/modals/parts/panel-select2.php:35
+msgid "Controls whether the dropdown is closed after a selection is made."
+msgstr "Controla si el menú desplegable se cierra después de que se haya hecho una selección."
+
+#: lib/view/backend/pages/modals/parts/panel-select2.php:33
+msgid "Close on select"
+msgstr "Cerrar al seleccionar"
+
+#: lib/view/backend/pages/modals/parts/panel-select2.php:29
+msgid "Implements automatic selection when the dropdown is closed."
+msgstr "Implementa la selección automática cuando el menú desplegable está cerrado."
+
+#: lib/view/backend/pages/modals/parts/panel-select2.php:27
+msgid "Select on close"
+msgstr "Seleccionar al cerrar"
+
+#: lib/view/backend/pages/modals/parts/panel-select2.php:21
+msgid "Display the search box for options."
+msgstr "Muestra la caja de búsqueda para opciones."
+
+#: lib/view/backend/pages/modals/parts/panel-select2.php:19
+msgid "Allow search"
+msgstr "Permitir buscar"
+
+#: lib/view/backend/pages/modals/parts/panel-select2.php:15
+msgid "Provides support for clearable selections."
+msgstr "Proporciona compatibilidad para selecciones que se pueden vaciar."
+
+#: lib/view/backend/pages/modals/parts/panel-select2.php:13
+msgid "Allow clear"
+msgstr "Permitir vaciar"
+
+#: lib/view/backend/pages/modals/parts/panel-select2.php:7
+msgid "Enhance select behaviour with select2."
+msgstr "Mejora el comportamiento de la selección con select2."
+
+#: lib/controller/class-premium.php:19 lib/controller/class-premium.php:26
+#: lib/controller/class-premium.php:27 lib/view/backend/pages/premium.php:6
+#: vendor_packages/wp-plugin-table-links.php:14
+msgid "Premium"
+msgstr "Premium"
+
+#: lib/controller/class-order.php:219 lib/controller/class-order.php:223
+msgid "Order Files"
+msgstr "Archivos de pedidos"
+
+#: lib/view/backend/pages/modals/parts/panel-display.php:12
+msgid "Hide this field on the checkout page"
+msgstr "Ocultar este campo en la página de pago"
+
+#: lib/view/backend/pages/modals/parts/panel-display.php:10
+msgid "Hide on checkout"
+msgstr "Ocultar en el pago"
+
+#: lib/view/backend/pages/modals/parts/panel-display.php:6
+msgid "Hide this field on the account page"
+msgstr "Ocultar este campo en la página de la cuenta"
+
+#: lib/view/backend/pages/modals/parts/panel-display.php:4
+msgid "Hide on account"
+msgstr "Ocultar en la cuenta"
+
+#: lib/controller/class-advanced.php:68 lib/controller/class-email.php:40
+#: lib/controller/class-email.php:53 lib/controller/class-email.php:62
+#: lib/controller/class-email.php:72 lib/controller/class-email.php:85
+#: lib/controller/class-email.php:95
+#: lib/controller/class-field-additional.php:120
+#: lib/view/backend/pages/modals/parts/panel-options.php:17
+#: lib/view/backend/pages/modals/parts/panel-options.php:21
+msgid "This is a premium feature."
+msgstr "Esta es una característica premium."
+
+#: lib/view/backend/pages/modals/parts/tabs.php:38
+msgid "Admin"
+msgstr "Administración"
+
+#: lib/view/backend/pages/modals/parts/panel-admin.php:8
+#: lib/view/backend/pages/modals/parts/panel-admin.php:14
+#: lib/view/backend/pages/modals/parts/panel-admin.php:20
+#: lib/view/backend/pages/modals/parts/panel-datepicker.php:8
+#: lib/view/backend/pages/modals/parts/panel-datepicker.php:16
+#: lib/view/backend/pages/modals/parts/panel-datepicker.php:26
+#: lib/view/backend/pages/modals/parts/panel-datepicker.php:37
+#: lib/view/backend/pages/modals/parts/panel-datepicker.php:48
+#: lib/view/backend/pages/modals/parts/panel-datepicker.php:59
+#: lib/view/backend/pages/modals/parts/panel-display.php:7
+#: lib/view/backend/pages/modals/parts/panel-display.php:13
+#: lib/view/backend/pages/modals/parts/panel-display.php:19
+#: lib/view/backend/pages/modals/parts/panel-display.php:25
+#: lib/view/backend/pages/modals/parts/panel-display.php:31
+#: lib/view/backend/pages/modals/parts/panel-filter.php:9
+#: lib/view/backend/pages/modals/parts/panel-filter.php:116
+#: lib/view/backend/pages/modals/parts/panel-filter.php:129
+#: lib/view/backend/pages/modals/parts/panel-general.php:68
+#: lib/view/backend/pages/modals/parts/panel-general.php:74
+#: lib/view/backend/pages/modals/parts/panel-general.php:83
+#: lib/view/backend/pages/modals/parts/panel-general.php:175
+#: lib/view/backend/pages/modals/parts/panel-general.php:218
+#: lib/view/backend/pages/modals/parts/panel-general.php:230
+#: lib/view/backend/pages/modals/parts/panel-price.php:7
+#: lib/view/backend/pages/modals/parts/panel-price.php:12
+#: lib/view/backend/pages/modals/parts/panel-price.php:21
+#: lib/view/backend/pages/modals/parts/panel-price.php:28
+#: lib/view/backend/pages/modals/parts/panel-select2.php:8
+#: lib/view/backend/pages/modals/parts/panel-select2.php:16
+#: lib/view/backend/pages/modals/parts/panel-select2.php:22
+#: lib/view/backend/pages/modals/parts/panel-select2.php:30
+#: lib/view/backend/pages/modals/parts/panel-select2.php:36
+#: lib/view/backend/pages/modals/parts/panel-timepicker.php:8
+#: lib/view/backend/pages/modals/parts/panel-timepicker.php:15
+#: lib/view/backend/pages/modals/parts/panel-timepicker.php:20
+#: lib/view/backend/pages/modals/parts/panel-timepicker.php:25
+#: lib/view/backend/pages/modals/parts/panel-timepicker.php:33
+msgid "This is a premium feature"
+msgstr "Esta es una característica premium"
+
+#: lib/model/class-field.php:164
+msgid "Option"
+msgstr "Opción"
+
+#: lib/view/backend/pages/modals/parts/info.php:67
+msgid "Conditional parent value"
+msgstr "Valor condicional principal"
+
+#: lib/controller/class-field-additional.php:147
+#: lib/view/backend/pages/modals/parts/info.php:30
+msgid "Field %s"
+msgstr "Campo %s"
+
+#: lib/view/backend/pages/modals/parts/info.php:25
+msgid "Select parent field&hellip;"
+msgstr "Selecciona el campo principal..."
+
+#: lib/view/backend/pages/modals/parts/info.php:10
+msgid "Parent type"
+msgstr "Tipo principal"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:145
+msgid "Default value of the checkout field."
+msgstr "Valor por defecto del campo de pago."
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:62
+msgid "Text for the button name."
+msgstr "Texto para el nombre del botón"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:61
+msgid "Upload your files"
+msgstr "Sube tus archivos"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:60
+msgid "Button"
+msgstr "Botón"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:54
+msgid "This is a placeholder"
+msgstr "Esto es un marcador de posición"
+
+#: lib/view/backend/pages/modals/parts/panel-price.php:26
+msgid "Tax"
+msgstr "Impuesto"
+
+#: lib/view/backend/pages/modals/parts/panel-price.php:15
+msgid "Total"
+msgstr "Total"
+
+#: lib/view/backend/pages/modals/parts/panel-options.php:73
+msgid "Delete selected"
+msgstr "Borrar lo seleccionado"
+
+#: lib/view/backend/pages/modals/parts/panel-options.php:72
+msgid "Add new option"
+msgstr "Añadir una nueva opción"
+
+#: lib/view/backend/pages/modals/parts/panel-options.php:20
+msgid "Taxable"
+msgstr "Imponible"
+
+#: lib/view/backend/pages/modals/parts/panel-options.php:16
+#: lib/view/backend/pages/modals/parts/panel-price.php:5
+#: lib/view/backend/pages/modals/parts/tabs.php:23
+msgid "Price"
+msgstr "Precio"
+
+#: lib/view/backend/pages/modals/parts/panel-options.php:9
+msgid "Select all"
+msgstr "Seleccionar todo"
+
+#: lib/view/frontend/class-fields-filter.php:33
+msgid "optional"
+msgstr "opcional"
+
+#: lib/view/backend/pages/modals/parts/info.php:58
+#: lib/view/backend/pages/modals/parts/panel-general.php:182
+msgid "Preserve default country&hellip;"
+msgstr "Mantener el país por defecto&hellip;"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:78
+msgid "Choose the allowed types&hellip;"
+msgstr "Elige los tipos permitidos&hellip;"
+
+#: lib/view/backend/pages/checkout.php:5
+msgid "Customize and manage the checkout settings."
+msgstr "Personaliza y gestiona los ajustes de finalizar compra."
+
+#: lib/view/backend/pages/checkout.php:3
+msgid "Checkout settings"
+msgstr "Ajustes de finalizar compra"
+
+#: lib/view/backend/pages/email.php:3
+msgid "Email settings"
+msgstr "Ajustes de correo electrónico"
+
+#: lib/view/backend/pages/advanced.php:3
+msgid "Advanced settings"
+msgstr "Ajustes avanzados"
+
+#: lib/view/backend/pages/order.php:5
+msgid "Customize and manage the order settings."
+msgstr "Personaliza y gestiona los ajustes del pedido."
+
+#: lib/view/backend/pages/order.php:3
+msgid "Order settings"
+msgstr "Ajustes del pedido"
+
+#: lib/controller/class-advanced.php:77
+msgid "Add custom stylesheets to the checkout page."
+msgstr "Añade hojas de estilo personalizadas a la página de finalizar compra."
+
+#: lib/controller/class-email.php:58 lib/controller/class-order.php:257
+msgid "Add upload files title"
+msgstr "Añade el título para subir archivos"
+
+#: lib/controller/class-email.php:35 lib/controller/class-order.php:236
+msgid "Add upload files"
+msgstr "Añade la subida de archivos"
+
+#: lib/controller/class-field-additional.php:85
+msgid "After order notes"
+msgstr "Notas después del pedido"
+
+#: lib/controller/class-field-additional.php:84
+msgid "Before order notes"
+msgstr "Notas antes del pedido"
+
+#: lib/controller/class-field-additional.php:77
+msgid "Select the position of the additional fields."
+msgstr "Selecciona la posición de los campos adicionales."
+
+#: lib/controller/class-checkout.php:277
+msgid "Add message after checkout"
+msgstr "Añadir mensaje después de finalizar compra"
+
+#: lib/controller/class-checkout.php:270
+msgid "Add message before checkout"
+msgstr "Añadir mensaje antes de finalizar compra"
+
+#: lib/controller/class-checkout.php:267
+msgid "Notes about your order, e.g. special notes for delivery."
+msgstr "Notas sobre tu pedido, p.ej. notas especiales para la entrega."
+
+#: lib/controller/class-checkout.php:263
+msgid "Order notes placeholder"
+msgstr "Marcador de posición de las notas del pedido"
+
+#: lib/controller/class-checkout.php:260
+msgid "Order notes"
+msgstr "Notas del pedido"
+
+#: lib/controller/class-checkout.php:257 lib/controller/class-checkout.php:264
+#: lib/controller/class-checkout.php:271 lib/controller/class-checkout.php:278
+msgid "Add custom title for the custom fields table in the thankyou page."
+msgstr "Añadir título personalizado a la tabla de los campos personalizados en la página de agradecimiento."
+
+#: lib/controller/class-checkout.php:256
+msgid "Order notes label"
+msgstr "Etiqueta de las notas del pedido"
+
+#: lib/controller/class-checkout.php:244
+msgid "Remove order notes"
+msgstr "Quita las notas del pedido"
+
+#: lib/controller/class-checkout.php:233
+msgid "Force create an account for guests users."
+msgstr "Forzar la creación de una cuenta para los invitados."
+
+#: lib/controller/class-checkout.php:220
+msgid "Force shipping address"
+msgstr "Forzar dirección de envío"
+
+#: lib/controller/class-email.php:59 lib/controller/class-email.php:91
+#: lib/controller/class-order.php:258 lib/controller/class-order.php:286
+msgid "Add custom title for the uploads files table."
+msgstr "Añade un título personalizado para la tabla de archivos subidos."
+
+#: lib/controller/class-email.php:90 lib/controller/class-order.php:285
+msgid "Add custom fields title"
+msgstr "Añade un título a los campos personalizados"
+
+#: lib/controller/class-order.php:237 lib/controller/class-order.php:249
+#: lib/controller/class-order.php:277
+msgid "Allow customers to upload files in the order."
+msgstr "Permite a los clientes subir archivos con el pedido."
+
+#: lib/controller/class-email.php:48 lib/controller/class-email.php:80
+#: lib/controller/class-order.php:248 lib/controller/class-order.php:276
+msgid "Add for this order status"
+msgstr "Añadir a este estado del pedido"
+
+#: lib/controller/class-order.php:265
+msgid "Show the selected fields in the order."
+msgstr "Mostrar los campos seleccionados en el pedido."
+
+#: lib/controller/class-email.php:67 lib/controller/class-order.php:264
+msgid "Add custom fields"
+msgstr "Añadir campos personalizados"
+
+#: lib/controller/class-email.php:96 lib/controller/class-order.php:289
+#: templates/order/order-custom-fields.php:3
+msgid "Order extra"
+msgstr "Pedido extra"
+
+#: lib/controller/class-field.php:79
+msgid "Are you sure you want to reset this fields?"
+msgstr "¿Seguro que quieres restablecer estos campos?"
+
+#: lib/view/backend/pages/modals/parts/main.php:19
+msgid "New"
+msgstr "Nuevo"
+
+#: jetpack_vendor/quadlayers/wp-plugin-suggestions/src/Page.php:78
+#: jetpack_vendor/quadlayers/wp-plugin-suggestions/src/Page.php:93
+#: jetpack_vendor/quadlayers/wp-plugin-suggestions/src/Page.php:94
+#: jetpack_vendor/quadlayers/wp-plugin-suggestions/src/view/suggestions.php:50
+#: lib/controller/class-suggestions.php:18
+#: lib/view/backend/pages/parts/header.php:2
+msgid "Suggestions"
+msgstr "Sugerencias"
+
+#: lib/view/backend/pages/modals/parts/panel-filter.php:61
+msgid "Show for category"
+msgstr "Mostrar por categoría"
+
+#: lib/view/backend/pages/modals/parts/panel-filter.php:62
+#: lib/view/backend/pages/modals/parts/panel-filter.php:72
+msgid "Filter by categories"
+msgstr "Filtrar por categoría"
+
+#: lib/view/backend/pages/modals/parts/panel-filter.php:71
+msgid "Hide for category"
+msgstr "Ocultar por categoría"
+
+#: lib/view/backend/pages/modals/parts/panel-filter.php:42
+msgid "Show for products"
+msgstr "Mostrar por producto"
+
+#: lib/view/backend/pages/modals/parts/panel-filter.php:43
+#: lib/view/backend/pages/modals/parts/panel-filter.php:51
+msgid "Filter by product"
+msgstr "Filtrar por producto"
+
+#: lib/view/backend/pages/modals/parts/panel-filter.php:50
+msgid "Hide for products"
+msgstr "Ocultar por producto"
+
+#: lib/view/backend/pages/modals/parts/panel-filter.php:15
+#: lib/view/backend/pages/modals/parts/panel-filter.php:23
+msgid "Filter by roles"
+msgstr "Filtrar por perfil"
+
+#: lib/view/backend/pages/modals/parts/info.php:69
+msgid "Show field if parent has this value."
+msgstr "Mostrar campo si el superior tiene este valor."
+
+#: lib/view/backend/pages/modals/parts/info.php:35
+msgid "Select conditional parent field."
+msgstr "Seleccionar el campo superior condicional."
+
+#: lib/view/backend/pages/modals/parts/info.php:19
+msgid "Activate conditional field requirement."
+msgstr "Activa el requisito de campo condicional."
+
+#: lib/view/backend/pages/modals/parts/info.php:43
+msgid "Value"
+msgstr "Valor"
+
+#: lib/view/backend/pages/modals/parts/info.php:24
+#: lib/view/backend/pages/parts/loop.php:18
+msgid "Parent"
+msgstr "Superior"
+
+#: lib/view/backend/pages/modals/parts/panel-timepicker.php:23
+msgid "Minutes interval"
+msgstr "Intervalo en minutos"
+
+#: lib/view/backend/pages/modals/parts/panel-timepicker.php:18
+msgid "Hour end"
+msgstr "Hora de finalización"
+
+#: lib/view/backend/pages/modals/parts/panel-timepicker.php:13
+msgid "Hour start"
+msgstr "Hora de inicio"
+
+#: lib/view/backend/pages/modals/parts/panel-datepicker.php:32
+msgid "Disable week days"
+msgstr "Desactivar días de la semana"
+
+#: lib/view/backend/pages/modals/parts/panel-datepicker.php:31
+msgid "Days disable"
+msgstr "Desactivar días"
+
+#: lib/view/backend/pages/modals/parts/panel-datepicker.php:56
+#: lib/view/backend/pages/modals/parts/panel-datepicker.php:57
+msgid "From… YYYY-MM-DD"
+msgstr "Desde… YYYY-MM-DD"
+
+#: lib/view/backend/pages/modals/parts/panel-datepicker.php:54
+msgid "Between dates"
+msgstr "Entre las fechas"
+
+#: lib/view/backend/pages/modals/parts/panel-datepicker.php:24
+msgid "Between fixed dates"
+msgstr "Entre fechas fijas"
+
+#: lib/view/backend/pages/modals/parts/panel-datepicker.php:23
+msgid "Since current date"
+msgstr "Desde la fecha actual"
+
+#: lib/view/backend/pages/modals/parts/panel-datepicker.php:21
+msgid "Date limit"
+msgstr "Límite de fecha"
+
+#: lib/view/backend/pages/modals/parts/panel-datepicker.php:13
+msgid "Date format"
+msgstr "Formato de fecha"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:9
+msgid "Currently is not possible to change the name of the fields."
+msgstr "Actualmente no es posible cambiar el nombre de estos campos."
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:7
+#: lib/view/backend/pages/modals/parts/panel-general.php:10
+msgid "myfield"
+msgstr "myfield"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:6
+msgid "You can't change the slug of default fields."
+msgstr "No puedes cambiar el slug de los campos por defecto."
+
+#: lib/view/backend/pages/modals/parts/info.php:77
+msgid "View documentation"
+msgstr "Ver documentación"
+
+#: lib/view/backend/pages/modals/parts/info.php:8
+msgid "Field key"
+msgstr "Clave del campo"
+
+#: lib/view/backend/pages/additional.php:5 lib/view/backend/pages/billing.php:5
+#: lib/view/backend/pages/email.php:5 lib/view/backend/pages/shipping.php:5
+msgid "Customize and manage the checkout %s fields."
+msgstr "Personaliza y gestiona los campos de finalizar compra de %s."
+
+#: lib/view/backend/pages/parts/loop.php:42
+#: lib/view/backend/pages/parts/loop.php:60
+#: lib/view/backend/pages/parts/loop.php:117
+msgid "The \"%s\" field currently disabled"
+msgstr "El campo «%s» está actualmente desactivado"
+
+#: lib/view/backend/pages/parts/loop.php:40
+#: lib/view/backend/pages/parts/loop.php:58
+#: lib/view/backend/pages/parts/loop.php:115
+msgid "The \"%s\" field currently enabled"
+msgstr "El campo «%s» está actualmente activado"
+
+#: lib/controller/class-field.php:78
+msgid "Are you sure you want to remove this field?"
+msgstr "¿Seguro que quieres eliminar este campo?"
+
+#. Translators: %d stock amount
+#: lib/class-backend.php:62
+msgid "Stock: %d"
+msgstr "Inventario: %d"
+
+#: lib/view/backend/admin-menu/user-files.php:11
+#: templates/my-account/form-edit-address-images.php:14
+#: templates/order/order-upload-files.php:14
+msgid "File"
+msgstr "Archivo"
+
+#: lib/view/backend/pages/modals/parts/tabs.php:28
+msgid "Timepicker"
+msgstr "Selector de hora"
+
+#: lib/view/backend/pages/modals/parts/tabs.php:33
+msgid "Datepicker"
+msgstr "Selector de fecha"
+
+#: lib/view/backend/pages/modals/parts/panel-select2.php:5
+#: lib/view/backend/pages/modals/parts/tabs.php:7
+msgid "Select2"
+msgstr "Select2"
+
+#: lib/class-plugin.php:120
+msgid "Current Color"
+msgstr "Color actual"
+
+#: lib/class-plugin.php:119
+msgid "Select Color"
+msgstr "Seleccionar el color"
+
+#: lib/view/backend/pages/modals/parts/panel-admin.php:19
+msgid "Allow Filtering on View Orders screen"
+msgstr "Permite el filtrado en la pantalla de visualización de los pedidos"
+
+#: lib/view/backend/pages/modals/parts/panel-admin.php:17
+#: lib/view/backend/pages/parts/loop.php:17
+msgid "Filterable"
+msgstr "Filtrado"
+
+#: lib/view/backend/pages/modals/parts/panel-admin.php:13
+msgid "Allow Sorting on View Orders screen"
+msgstr "Permite la ordenación en la pantalla de visualización de los pedidos"
+
+#: lib/view/backend/pages/modals/parts/panel-admin.php:11
+#: lib/view/backend/pages/parts/loop.php:16
+msgid "Sortable"
+msgstr "Ordenado"
+
+#: lib/view/backend/pages/modals/parts/panel-admin.php:7
+msgid "Display in View Orders screen"
+msgstr "Mostrar en la pantalla de visualización de los pedidos"
+
+#: lib/view/backend/pages/modals/parts/panel-admin.php:5
+#: lib/view/backend/pages/parts/loop.php:15
+msgid "Listable"
+msgstr "Listado"
+
+#: lib/view/backend/pages/modals/parts/panel-filter.php:36
+msgid "Apply conditions even if there is more than one product"
+msgstr "Aplicar condiciones aunque más de un producto"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:141
+#: lib/view/backend/pages/modals/parts/panel-general.php:143
+msgid "Enter a default value (optional)"
+msgstr "Introduce un valor por defecto (opcional)"
+
+#: lib/class-upload.php:160 lib/controller/class-order.php:143
+msgid "Unknown error."
+msgstr "Error desconocido."
+
+#: lib/view/backend/pages/modals/parts/info.php:7
+msgid "Field id"
+msgstr "ID del campo"
+
+#: lib/view/backend/pages/modals/parts/info.php:3
+msgid "Saved."
+msgstr "Guardado."
+
+#: lib/view/backend/pages/modals/parts/main.php:18
+msgid "Edit field"
+msgstr "Editar el campo"
+
+#: lib/view/backend/pages/modals/parts/main.php:15
+msgid "Close dialog"
+msgstr "Cerrar el diálogo"
+
+#: lib/view/backend/pages/modals/parts/main.php:13
+msgid "Edit next media item"
+msgstr "Editar el siguiente elemento de medios"
+
+#: lib/view/backend/pages/modals/parts/main.php:12
+msgid "Edit previous media item"
+msgstr "Editar el anterior elemento de medios"
+
+#: lib/view/backend/pages/modals/parts/info.php:76
+msgid "Get premium version"
+msgstr "Consigue la versión premium"
+
+#: lib/view/backend/pages/modals/parts/info.php:75
+msgid "View checkout page"
+msgstr "Ver página de finalizar compra"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:49
+msgid "Label text of the checkout field."
+msgstr "Texto de la etiqueta del campo de pago."
+
+#: lib/view/backend/pages/modals/parts/panel-filter.php:22
+msgid "Hide for roles"
+msgstr "Ocultar para los perfiles"
+
+#: lib/view/backend/pages/modals/parts/panel-filter.php:14
+msgid "Show for roles"
+msgstr "Mostrar para los perfiles"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:30
+msgid "Type of the checkout field."
+msgstr "Tipo del campo de pago."
+
+#: lib/view/backend/pages/parts/loop.php:20
+msgid "Disabled"
+msgstr "Desactivado"
+
+#: lib/view/backend/pages/modals/parts/tabs.php:19
+msgid "Display"
+msgstr "Visualización"
+
+#: lib/view/backend/pages/modals/parts/tabs.php:12
+msgid "Options"
+msgstr "Opciones"
+
+#: lib/controller/class-field-additional.php:117
+#: lib/view/backend/pages/parts/loop.php:123
+msgid "Edit"
+msgstr "Editar"
+
+#: lib/view/backend/pages/parts/loop.php:123
+#: lib/view/backend/pages/parts/loop.php:127
+msgid "Edit checkout field"
+msgstr "Editar campo de finalizar compra"
+
+#: lib/controller/class-field.php:280
+msgid "Undefined field id"
+msgstr "Id de campo sin definir"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:205
+msgid "Extra class"
+msgstr "Clase extra"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:55
+#: lib/view/backend/pages/modals/parts/panel-general.php:92
+msgid "Placeholder text of the checkout field."
+msgstr "Texto del marcador de posición para el campo de pago."
+
+#: lib/view/backend/pages/parts/actions.php:5
+msgid "Reset"
+msgstr "Restablecer"
+
+#: lib/view/backend/pages/parts/actions.php:4
+msgid "Import"
+msgstr "Importar"
+
+#: lib/class-plugin.php:99
+msgid "Uploading, please wait..."
+msgstr "Subiendo, por favor, espera…"
+
+#: lib/view/backend/pages/parts/loop.php:32
+msgid "Move down"
+msgstr "Mover abajo"
+
+#: lib/view/backend/pages/parts/loop.php:32
+msgid "Move the \"%s\" payment method down"
+msgstr "Mueve el método de pago «%s» abajo"
+
+#: lib/view/backend/pages/parts/loop.php:31
+msgid "Move up"
+msgstr "Mover arriba"
+
+#: lib/view/backend/pages/parts/loop.php:31
+msgid "Move the \"%s\" payment method up"
+msgstr "Mueve el método de pago «%s» arriba"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:16
+#: lib/view/backend/pages/modals/parts/panel-general.php:99
+#: lib/view/backend/pages/modals/parts/panel-general.php:117
+#: lib/view/backend/pages/parts/loop.php:12
+msgid "Type"
+msgstr "Tipo"
+
+#: lib/controller/class-order.php:301 lib/view/backend/pages/order.php:2
+msgid "Order"
+msgstr "Pedido"
+
+#: lib/controller/class-checkout.php:232
+msgid "Force create an account"
+msgstr "Forzar la creación de una cuenta"
+
+#: lib/controller/class-checkout.php:221
+msgid "Force show shipping checkout fields."
+msgstr "Fuerza la visualización de los campos de envío al finalizar la compra."
+
+#: lib/controller/class-order.php:127
+msgid "Invalid order id."
+msgstr "ID de pedido no válido."
+
+#: lib/controller/class-order.php:86
+msgid "Empty order id."
+msgstr "ID de pedido vacío."
+
+#: lib/class-backend.php:98 lib/class-backend.php:103
+#: lib/controller/class-checkout.php:330 lib/view/backend/pages/checkout.php:2
+msgid "Checkout"
+msgstr "Finalizar compra"
+
+#: lib/class-upload.php:82 lib/controller/class-my-account.php:39
+msgid "No attachment selected."
+msgstr "No se ha seleccionado ningún adjunto."
+
+#: vendor_packages/wp-notice-plugin-promote.php:53
+msgid "Report a bug"
+msgstr "Informar de un fallo"
+
+#. Author URI of the plugin
+#: woocommerce-checkout-manager.php
+msgid "https://quadlayers.com"
+msgstr "https://quadlayers.com"
+
+#. Author of the plugin
+#: woocommerce-checkout-manager.php
+#: jetpack_vendor/quadlayers/wp-plugin-suggestions/src/view/suggestions.php:82
+#: lib/view/backend/pages/parts/header.php:26
+msgid "QuadLayers"
+msgstr "QuadLayers"
+
+#: lib/view/backend/admin-menu/user-files.php:12
+#: lib/view/backend/meta-boxes/html-order-uploads.php:9
+#: templates/my-account/form-edit-address-images.php:15
+#: templates/order/order-upload-files.php:15
+msgid "Filename"
+msgstr "Nombre de archivo"
+
+#: lib/controller/class-advanced.php:71 lib/controller/class-checkout.php:227
+#: lib/controller/class-checkout.php:239 lib/controller/class-checkout.php:251
+#: lib/controller/class-email.php:43 lib/controller/class-email.php:75
+#: lib/controller/class-order.php:243 lib/controller/class-order.php:271
+#: lib/view/backend/pages/modals/parts/info.php:55
+#: lib/view/backend/pages/modals/parts/panel-general.php:138
+#: lib/view/backend/pages/modals/parts/panel-general.php:227
+#: lib/view/backend/pages/parts/loop.php:42
+#: lib/view/backend/pages/parts/loop.php:60
+#: lib/view/backend/pages/parts/loop.php:117
+msgid "No"
+msgstr "No"
+
+#: lib/view/backend/pages/modals/parts/main.php:48
+msgid "Close"
+msgstr "Cerrado"
+
+#: lib/view/backend/pages/modals/parts/main.php:42
+msgid "Save"
+msgstr "Grabar"
+
+#: lib/class-plugin.php:118
+#: lib/view/backend/pages/modals/parts/panel-general.php:119
+#: lib/view/backend/pages/modals/parts/panel-general.php:134
+#: lib/view/backend/pages/modals/parts/panel-general.php:181
+#: lib/view/backend/pages/modals/parts/panel-options.php:24
+msgid "Default"
+msgstr "Por defecto"
+
+#: lib/controller/class-advanced.php:95 lib/view/backend/pages/advanced.php:2
+msgid "Advanced"
+msgstr "Avanzado"
+
+#: lib/view/backend/pages/parts/loop.php:49
+msgid "Wide"
+msgstr "Ancho"
+
+#: lib/view/backend/pages/shipping.php:3
+msgid "Shipping fields"
+msgstr "Campos de envío"
+
+#: lib/view/backend/pages/billing.php:3
+msgid "Billing fields"
+msgstr "Campos de facturación"
+
+#: lib/class-upload.php:151 lib/controller/class-order.php:122
+msgid "No uploads were recognized. Files were not uploaded."
+msgstr "No se ha reconocido ninguna subida. No se subieron archivos."
+
+#: lib/view/backend/meta-boxes/html-order-uploads.php:49
+#: templates/order/order-upload-files.php:53
+msgid "No files have been uploaded to this order."
+msgstr "No se han subido archivos a este pedido."
+
+#: lib/view/backend/admin-menu/user-files.php:13
+#: lib/view/backend/meta-boxes/html-order-uploads.php:10
+#: templates/my-account/form-edit-address-images.php:16
+#: templates/order/order-upload-files.php:16
+msgid "Dimensions"
+msgstr "Dimensiones"
+
+#: lib/view/backend/meta-boxes/html-order-uploads.php:8
+msgid "Image"
+msgstr "Imagen"
+
+#: lib/view/backend/pages/parts/loop.php:19
+msgid "ID"
+msgstr "ID"
+
+#: lib/class-plugin.php:100
+msgid "Saving, please wait..."
+msgstr "Guardando, por favor espera…"
+
+#: lib/controller/class-field-additional.php:146
+msgid "Generic"
+msgstr "Genérico"
+
+#: lib/controller/class-field-additional.php:146
+msgid "ID: %1$s | Field Type: %2$s"
+msgstr "ID: %1$s | Tipo de campo: %2$s"
+
+#: lib/view/frontend/class-fields-filter.php:31
+msgid "required"
+msgstr "necesario"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:37
+msgid "Picker Type"
+msgstr "Tipo de selector"
+
+#: lib/view/backend/pages/modals/parts/info.php:17
+msgid "Conditional"
+msgstr "Condicional"
+
+#: lib/class-plugin.php:117 lib/view/backend/pages/parts/loop.php:11
+msgid "Clear"
+msgstr "Vaciar"
+
+#: lib/view/backend/pages/parts/loop.php:10
+msgid "Position"
+msgstr "Posición"
+
+#: lib/view/backend/pages/modals/parts/panel-filter.php:34
+msgid "More"
+msgstr "Más"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:40
+msgid "Iris"
+msgstr "Iris"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:39
+msgid "Farbtastic"
+msgstr "Farbtastic"
+
+#: lib/controller/class-advanced.php:70 lib/controller/class-checkout.php:226
+#: lib/controller/class-checkout.php:238 lib/controller/class-checkout.php:250
+#: lib/controller/class-email.php:42 lib/controller/class-email.php:74
+#: lib/controller/class-order.php:242 lib/controller/class-order.php:270
+#: lib/view/backend/pages/modals/parts/info.php:54
+#: lib/view/backend/pages/modals/parts/panel-general.php:137
+#: lib/view/backend/pages/modals/parts/panel-general.php:226
+#: lib/view/backend/pages/parts/loop.php:40
+#: lib/view/backend/pages/parts/loop.php:58
+#: lib/view/backend/pages/parts/loop.php:88
+#: lib/view/backend/pages/parts/loop.php:90
+#: lib/view/backend/pages/parts/loop.php:97
+#: lib/view/backend/pages/parts/loop.php:99
+#: lib/view/backend/pages/parts/loop.php:106
+#: lib/view/backend/pages/parts/loop.php:108
+#: lib/view/backend/pages/parts/loop.php:115
+#: lib/view/frontend/class-fields-handler.php:70
+msgid "Yes"
+msgstr "Sí"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:48
+msgid "My Field Name"
+msgstr "Nombre de mi campo"
+
+#: lib/view/backend/pages/parts/loop.php:51
+msgid "Right"
+msgstr "Derecha"
+
+#: lib/view/backend/pages/parts/loop.php:50
+msgid "Left"
+msgstr "Izquierda"
+
+#: lib/view/backend/pages/parts/header.php:6
+#: lib/view/backend/pages/parts/tabs.php:3
+#: vendor_packages/wp-plugin-table-links.php:26
+msgid "Documentation"
+msgstr "Documentación"
+
+#: vendor_packages/wp-plugin-table-links.php:21
+msgid "Support"
+msgstr "Soporte"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:195
+msgid "Select country&hellip;"
+msgstr "Selecciona un país..."
+
+#: lib/view/backend/meta-boxes/html-order-uploads.php:58
+#: templates/order/order-upload-files.php:62
+msgid "Upload Files"
+msgstr "Subir ficheros"
+
+#: lib/view/backend/meta-boxes/html-order-uploads.php:42
+msgid "Download"
+msgstr "Descargar"
+
+#: lib/controller/class-field-additional.php:83
+msgid "After billing form"
+msgstr "Después del formulario de facturación"
+
+#: lib/controller/class-field-additional.php:82
+msgid "Before billing form"
+msgstr "Antes del formulario de facturación"
+
+#: lib/controller/class-advanced.php:76
+msgid "Custom CSS"
+msgstr "CSS personalizado"
+
+#: lib/view/backend/meta-boxes/html-order-uploads.php:61
+#: templates/order/order-upload-files.php:65
+msgid "Save Changes"
+msgstr "Guardar cambios"
+
+#: lib/controller/class-field-additional.php:116
+#: lib/controller/class-field-additional.php:205
+#: lib/view/backend/pages/additional.php:2
+#: lib/view/frontend/class-fields-i18n.php:32
+#: lib/view/frontend/class-fields-i18n.php:50
+msgid "Additional"
+msgstr "Adicional"
+
+#: lib/controller/class-field-shipping.php:38
+#: lib/view/backend/pages/shipping.php:2
+#: lib/view/frontend/class-fields-i18n.php:29
+#: lib/view/frontend/class-fields-i18n.php:47
+msgid "Shipping"
+msgstr "Envío"
+
+#: lib/controller/class-field-billing.php:76
+#: lib/view/backend/pages/billing.php:2
+#: lib/view/frontend/class-fields-i18n.php:26
+#: lib/view/frontend/class-fields-i18n.php:44
+msgid "Billing"
+msgstr "Facturación"
+
+#: lib/view/backend/pages/modals/parts/tabs.php:3
+msgid "General"
+msgstr "General"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:77
+msgid "File Types"
+msgstr "Tipos de archivo"
+
+#: lib/class-plugin.php:102
+msgid "Deleted successfully."
+msgstr "Borrado con éxito."
+
+#: lib/view/backend/meta-boxes/html-order-uploads.php:43
+#: lib/view/backend/pages/parts/loop.php:127
+#: templates/my-account/form-edit-address-images.php:50
+#: templates/order/order-upload-files.php:47
+msgid "Delete"
+msgstr "Borrar"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:4
+#: lib/view/backend/pages/modals/parts/panel-price.php:10
+msgid "Name"
+msgstr "Nombre"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:125
+msgid "Link"
+msgstr "Link"
+
+#: lib/view/backend/admin-menu/user-files.php:14
+#: lib/view/backend/meta-boxes/html-order-uploads.php:11
+#: templates/my-account/form-edit-address-images.php:17
+#: templates/order/order-upload-files.php:17
+msgid "Extension"
+msgstr "Extensión"
+
+#: templates/my-account/form-edit-address-images.php:18
+#: templates/order/order-upload-files.php:18
+msgid "Actions"
+msgstr "Acciones"
+
+#: lib/class-plugin.php:101
+msgid "Files uploaded successfully."
+msgstr "Archivos subidos correctamente."
+
+#. Plugin Name of the plugin
+#: woocommerce-checkout-manager.php
+msgid "WooCommerce Checkout Manager"
+msgstr "WooCommerce Checkout Manager"
+
+#: vendor_packages/wp-plugin-table-links.php:9
+msgid "Settings"
+msgstr "Ajustes"
+
+#: lib/view/backend/pages/parts/actions.php:3
+msgid "+ Add New Field"
+msgstr "+ Añadir nuevo campo"
+
+#: lib/view/backend/pages/parts/loop.php:9
+msgid "Required"
+msgstr "Obligatorio"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:53
+#: lib/view/backend/pages/parts/loop.php:14
+msgid "Placeholder"
+msgstr "Texto interior"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:47
+#: lib/view/backend/pages/modals/parts/panel-options.php:13
+#: lib/view/backend/pages/parts/loop.php:13
+msgid "Label"
+msgstr "Etiqueta"
+
+#: lib/view/backend/pages/modals/parts/panel-general.php:194
+msgid "Country"
+msgstr "País"
+
+#: lib/view/backend/pages/additional.php:3
+msgid "Additional fields"
+msgstr "Campos adicionales"

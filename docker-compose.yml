@@ -1,0 +1,52 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: wp_db
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./wp:/var/www/html
+       - ./config/custom-php.ini:/usr/local/etc/php/conf.d/zzz-custom-php.ini
+    networks:
+      - wp-network
+
+  wordpress:
+    image: wordpress:latest
+    container_name: wp_web
+    depends_on:
+      - db
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - WORDPRESS_DB_HOST=db:3306
+      - WORDPRESS_DB_USER=${MYSQL_USER}
+      - WORDPRESS_DB_PASSWORD=${MYSQL_PASSWORD}
+      - WORDPRESS_DB_NAME=${MYSQL_DATABASE}
+    ports:
+      - "${WORDPRESS_PORT:-8080}:80"
+    # --------------------------
+    # Opción A: montar el código en el host (útil para editar/copiar fácilmente)
+    volumes:
+      - ./wp:/var/www/html
+    # --------------------------
+    # Opción B (alternativa): usar volumen nombrado (todo dentro de Docker)
+    # volumes:
+    #   - wp_data:/var/www/html
+    networks:
+      - wp-network
+
+volumes:
+  db_data:
+  wp_data:    # si usas la Opción B la activas en wordpress.service
+
+networks:
+  wp-network:
+
