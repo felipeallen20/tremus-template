@@ -19,6 +19,8 @@ class WPRS_Plugin {
         add_action('wp_ajax_wprs_submit_rating', array($this, 'ajax_submit_rating'));
         add_action('wp_ajax_nopriv_wprs_submit_rating', array($this, 'ajax_submit_rating'));
 
+        add_action('wp_ajax_wprs_update_review', array($this, 'ajax_update_review'));
+
         add_action('admin_menu', array($this, 'admin_menu'));
     }
 
@@ -37,7 +39,7 @@ class WPRS_Plugin {
 
     // Assets frontend (inline CSS + JS en cola)
     public function frontend_assets() {
-        wp_register_script('wprs-frontend', plugins_url('wprs-frontend.js', __FILE__), array('jquery'), '1.0', true);
+        wp_register_script('wprs-frontend', plugins_url('wprs-frontend.js', __FILE__), array('jquery'), '1.1', true);
         wp_localize_script('wprs-frontend', 'wprs_ajax', array(
             'ajax_url' => admin_url('admin-ajax.php'),
             'nonce' => wp_create_nonce('wprs-nonce'),
@@ -106,13 +108,59 @@ class WPRS_Plugin {
                     <span class="wprs-average"><?php echo number_format((float)$average, 2); ?></span>
                     <span class="wprs-count">(<?php echo intval($count); ?>)</span>
                 </div>
-                <?php if (!$user_voted): ?>
-                    <div class="wprs-rate-here">Haz clic en las estrellas para valorar</div>
-                <?php else: ?>
+                <?php if (is_user_logged_in() && !$user_voted): ?>
+                    <div class="wprs-review-form">
+                        <input type="text" id="wprs-review-title" placeholder="Título de tu reseña">
+                        <textarea id="wprs-review-text" placeholder="Escribe tu reseña aquí..."></textarea>
+                        <button id="wprs-submit-review">Enviar reseña</button>
+                    </div>
+                <?php elseif ($user_voted): ?>
                     <div class="wprs-already">Ya has votado</div>
+                <?php else: ?>
+                    <div class="wprs-login-prompt">
+                        <a href="<?php echo wp_login_url(get_permalink()); ?>">Inicia sesión</a> para dejar una reseña.
+                    </div>
                 <?php endif; ?>
             <?php endif; ?>
         </div>
+
+        <?php
+        // Muestra las últimas 3 reseñas
+        $recent_reviews_args = array(
+            'post_id' => $product_id,
+            'number'  => 3,
+            'status'  => 'approve',
+            'type'    => 'review',
+            'meta_key' => 'rating'
+        );
+        $recent_reviews = get_comments($recent_reviews_args);
+
+        if ($recent_reviews) {
+            echo '<div class="wprs-recent-reviews-container">';
+            echo '<h3>Reseñas Recientes</h3>';
+            foreach ($recent_reviews as $review) {
+                $rating = get_comment_meta($review->comment_ID, 'rating', true);
+                $title = get_comment_meta($review->comment_ID, 'title', true);
+                ?>
+                <div class="wprs-review-item" data-review-id="<?php echo $review->comment_ID; ?>">
+                    <div class="wprs-review-title"><strong><?php echo esc_html($title); ?></strong></div>
+                    <div class="wprs-review-author">por <?php echo esc_html($review->comment_author); ?></div>
+                    <div class="wprs-review-rating">
+                        <?php for ($i = 1; $i <= 5; $i++): ?>
+                            <span class="wprs-star <?php echo ($i <= $rating) ? 'filled' : ''; ?>">&#9733;</span>
+                        <?php endfor; ?>
+                    </div>
+                    <div class="wprs-review-content"><?php echo wpautop(esc_html($review->comment_content)); ?></div>
+
+                    <?php if (is_user_logged_in() && get_current_user_id() == $review->user_id): ?>
+                        <button class="wprs-edit-review-btn">Editar Reseña</button>
+                    <?php endif; ?>
+                </div>
+                <?php
+            }
+            echo '</div>';
+        }
+        ?>
         <?php
         return ob_get_clean();
     }
@@ -123,47 +171,91 @@ class WPRS_Plugin {
 
         $product_id = intval($_POST['product_id']);
         $rating = intval($_POST['rating']);
-        if (!$product_id || $rating < 1 || $rating > 5) wp_send_json_error('Datos incorrectos');
+        $review_title = isset($_POST['review_title']) ? sanitize_text_field($_POST['review_title']) : '';
+        $review_text = isset($_POST['review_text']) ? sanitize_textarea_field($_POST['review_text']) : '';
 
-        $user_id = get_current_user_id();
-        $author = $user_id ? wp_get_current_user()->display_name : sanitize_text_field($_POST['author'] ?? 'Anon');
-        $content = sanitize_text_field($_POST['content'] ?? '');
-
-        // prevenir doble voto: check user_id o IP/cookie
-        if ($user_id) {
-            $existing = get_comments(array('post_id' => $product_id, 'user_id' => $user_id, 'meta_key' => 'rating', 'status' => 'approve'));
-            if (!empty($existing)) wp_send_json_error('Ya has votado este producto');
-        } else {
-            $ip = $_SERVER['REMOTE_ADDR'];
-            $existing = get_comments(array('post_id' => $product_id, 'meta_key' => 'rating', 'status' => 'approve'));
-            foreach ($existing as $c) {
-                $c_ip = get_comment_meta($c->comment_ID, 'wprs_ip', true);
-                if ($c_ip && $c_ip === $ip) wp_send_json_error('Ya se ha registrado un voto desde esta IP');
-            }
+        if (!$product_id || $rating < 1 || $rating > 5) {
+            wp_send_json_error('Datos incorrectos.');
         }
 
-        // insertar comentario
+        $user_id = get_current_user_id();
+        if (!$user_id) {
+            wp_send_json_error('Debes iniciar sesión para dejar una reseña.');
+        }
+
+        if (empty($review_text)) {
+            wp_send_json_error('Por favor, escribe tu reseña.');
+        }
+
+        $author = wp_get_current_user()->display_name;
+
+        // Prevenir doble voto
+        $existing = get_comments(array('post_id' => $product_id, 'user_id' => $user_id, 'meta_key' => 'rating', 'status' => 'approve'));
+        if (!empty($existing)) {
+            wp_send_json_error('Ya has votado este producto.');
+        }
+
+        // Insertar comentario
         $commentdata = array(
             'comment_post_ID' => $product_id,
             'comment_author' => $author,
-            'comment_content' => $content,
+            'comment_content' => $review_text,
             'user_id' => $user_id,
             'comment_approved' => 1,
             'comment_type' => 'review'
         );
         $comment_id = wp_insert_comment($commentdata);
-        if (!$comment_id) wp_send_json_error('No se pudo guardar la review');
+        if (!$comment_id) {
+            wp_send_json_error('No se pudo guardar la review.');
+        }
 
         update_comment_meta($comment_id, 'rating', $rating);
-        update_comment_meta($comment_id, 'wprs_ip', $_SERVER['REMOTE_ADDR']);
+        update_comment_meta($comment_id, 'title', $review_title);
 
-        // recalcular agregados de producto (usar meta de WooCommerce _wc_average_rating y _wc_review_count si existen)
+        // Recalcular agregados de producto
         $this->recalculate_product_score($product_id);
 
-        // poner cookie simple para invitados
-        setcookie('wprs_voted_' . $product_id, '1', time() + 60 * 60 * 24 * 365, COOKIEPATH, COOKIE_DOMAIN);
+        wp_send_json_success(array('message' => 'Gracias por tu reseña.'));
+    }
 
-        wp_send_json_success(array('message' => 'Gracias por tu voto'));
+    // AJAX handler para actualizar una review existente
+    public function ajax_update_review() {
+        check_ajax_referer('wprs-nonce', 'nonce');
+
+        $review_id = intval($_POST['review_id']);
+        $rating = intval($_POST['rating']);
+        $review_title = isset($_POST['review_title']) ? sanitize_text_field($_POST['review_title']) : '';
+        $review_text = isset($_POST['review_text']) ? sanitize_textarea_field($_POST['review_text']) : '';
+
+        if (!$review_id || $rating < 1 || $rating > 5) {
+            wp_send_json_error('Datos incorrectos.');
+        }
+
+        $user_id = get_current_user_id();
+        $comment = get_comment($review_id);
+
+        if (!$user_id || $comment->user_id != $user_id) {
+            wp_send_json_error('No tienes permiso para editar esta reseña.');
+        }
+
+        if (empty($review_text)) {
+            wp_send_json_error('Por favor, escribe tu reseña.');
+        }
+
+        // Actualizar el comentario
+        $commentdata = array(
+            'comment_ID' => $review_id,
+            'comment_content' => $review_text
+        );
+        wp_update_comment($commentdata);
+
+        update_comment_meta($review_id, 'rating', $rating);
+        update_comment_meta($review_id, 'title', $review_title);
+
+        // Recalcular agregados de producto
+        $this->recalculate_product_score($comment->comment_post_ID);
+
+        wp_send_json_success(array('message' => 'Reseña actualizada correctamente.'));
     }
 
     // Recalcula promedio, conteo y campo review_score (guardado en postmeta 'review_score')
