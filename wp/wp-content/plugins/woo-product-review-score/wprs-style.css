@@ -79,3 +79,12 @@
   font-size: 16px;
   cursor: default;
 }
+
+.wprs-review-form{
+  max-width: 45%;
+}
+
+.wprs-review-form button{
+  background: #192e41;
+  color: #fff;
+}
