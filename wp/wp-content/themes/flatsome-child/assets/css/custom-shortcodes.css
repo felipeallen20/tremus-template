@@ -339,6 +339,19 @@
   font-family: "Open Sans", sans-serif;
 }
 
+/* Animación al hacer hover */
+.tremus-cart-widget:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  transition: transform 0.5s ease;
+}
+
+/* Icono del carrito animado */
+.tremus-cart-widget:hover .cart-header-icon {
+  transform: scale(1.1) rotate(-5deg);
+  transition: transform 0.5s ease;
+}
+
 .tremus-cart-widget .cart-top {
   display: flex;
   align-items: center;
@@ -369,6 +382,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.tremus-cart-widget:hover .cart-count {
+  transform: scale(1.15);
+  transition: transform 0.5s ease;
 }
 
 .cart-total {

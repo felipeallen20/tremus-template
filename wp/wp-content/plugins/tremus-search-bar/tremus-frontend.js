@@ -1,15 +1,20 @@
 jQuery(document).ready(function($) {
     var searchTimeout;
+
     $('.tremus-search-field').on('keyup', function() {
-        var searchTerm = $(this).val();
-        var resultsContainer = $(this).closest('.tremus-search-container').find('.tremus-search-results');
+        var searchTerm = $(this).val().trim();
+        var container = $(this).closest('.tremus-search-container');
+        var resultsContainer = container.find('.tremus-search-results');
 
         clearTimeout(searchTimeout);
 
-        if (searchTerm.length < 3) {
-            resultsContainer.hide();
+        if (searchTerm.length < 1) {
+            resultsContainer.hide().empty();
             return;
         }
+
+        // Mostrar contenedor y mensaje de "Buscando..."
+        resultsContainer.html('<div class="tremus-loading">🔍 Buscando productos...</div>').show();
 
         searchTimeout = setTimeout(function() {
             $.ajax({
@@ -23,9 +28,9 @@ jQuery(document).ready(function($) {
                     if (response.success) {
                         var resultsHtml = '<div class="tremus-results-wrapper">';
 
-                        // Display products
+                        // Productos
                         if (response.data.products.length > 0) {
-                            resultsHtml += '<h5>Products</h5>';
+                            resultsHtml += '<h5>Productos</h5>';
                             resultsHtml += '<ul class="tremus-product-results">';
                             $.each(response.data.products, function(index, product) {
                                 resultsHtml += '<li>';
@@ -39,21 +44,19 @@ jQuery(document).ready(function($) {
                             resultsHtml += '</ul>';
                         }
 
-                        // Display categories
+                        // Categorías
                         if (response.data.categories.length > 0) {
-                            resultsHtml += '<h5>Categories</h5>';
+                            resultsHtml += '<h5>Categorías</h5>';
                             resultsHtml += '<ul class="tremus-category-results">';
                             $.each(response.data.categories, function(index, category) {
-                                resultsHtml += '<li>';
-                                resultsHtml += '<a href="' + category.url + '">' + category.name + '</a>';
-                                resultsHtml += '</li>';
+                                resultsHtml += '<li><a href="' + category.url + '">' + category.name + '</a></li>';
                             });
                             resultsHtml += '</ul>';
                         }
 
-                        // "View all results" link
+                        // Ver todos
                         if (response.data.products.length > 0) {
-                            resultsHtml += '<a href="' + tremus_ajax.shop_page_url + '?s=' + searchTerm + '&post_type=product" class="tremus-view-all">View all results</a>';
+                            resultsHtml += '<a href="' + tremus_ajax.shop_page_url + '?s=' + encodeURIComponent(searchTerm) + '&post_type=product" class="tremus-view-all">Ver todos los resultados</a>';
                         }
 
                         resultsHtml += '</div>';
@@ -61,17 +64,20 @@ jQuery(document).ready(function($) {
                         if (response.data.products.length > 0 || response.data.categories.length > 0) {
                             resultsContainer.html(resultsHtml).show();
                         } else {
-                            resultsContainer.hide();
+                            resultsContainer.html('<div class="tremus-no-results">No se encontraron productos.</div>').show();
                         }
                     } else {
-                        resultsContainer.hide();
+                        resultsContainer.html('<div class="tremus-no-results">Error en la búsqueda.</div>').show();
                     }
+                },
+                error: function() {
+                    resultsContainer.html('<div class="tremus-no-results">Error en la búsqueda.</div>').show();
                 }
             });
-        }, 500); // 500ms delay
+        }, 400); // delay para evitar llamadas constantes
     });
 
-    // Hide results when clicking outside
+    // Ocultar resultados al hacer clic fuera
     $(document).on('click', function(e) {
         if (!$(e.target).closest('.tremus-search-container').length) {
             $('.tremus-search-results').hide();

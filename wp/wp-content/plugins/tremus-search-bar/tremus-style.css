@@ -1,7 +1,7 @@
 /* Tremus Search Bar Frontend CSS */
 .tremus-search-container {
     position: relative;
-    width: 100%;
+    width: 50vw;
     max-width: 800px; /* Increased width */
     margin: 0 auto; /* No top/bottom margin */
 }
@@ -13,7 +13,7 @@
 .tremus-search-field {
     flex-grow: 1;
     border: 1px solid #ccc;
-    padding: 10px;
+    padding: 20px 15px !important;
     font-size: 16px;
     width: 100%; /* Ensure it takes full width */
 }
@@ -22,7 +22,7 @@
     border: 1px solid #ccc;
     border-left: none;
     cursor: pointer;
-    padding: 10px 15px;
+    padding: 2px 15px;
 }
 .tremus-search-results {
     position: absolute;

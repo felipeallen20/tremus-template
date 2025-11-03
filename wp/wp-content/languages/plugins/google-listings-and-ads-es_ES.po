@@ -2,14 +2,152 @@
 # This file is distributed under the same license as the Plugins - Google for WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-08-19 19:19:30+0000\n"
+"PO-Revision-Date: 2025-11-02 09:13:42+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/4.0.1\n"
+"X-Generator: GlotPress/4.0.3\n"
 "Language: es\n"
 "Project-Id-Version: Plugins - Google for WooCommerce - Stable (latest release)\n"
+
+#: src/Admin/SystemStatusService.php:103
+msgid "No sync mode configuration found"
+msgstr "No se ha encontrado la configuración del modo de sincronización"
+
+#: src/Admin/SystemStatusService.php:87
+msgid "Error retrieving sync mode configuration"
+msgstr "Error al recuperar la configuración del modo de sincronización"
+
+#: src/Admin/SystemStatusService.php:82 src/Admin/SystemStatusService.php:98
+msgid "Sync Mode Status:"
+msgstr "Estado del modo de sincronización:"
+
+#: src/API/Site/Controllers/Ads/RecommendationsController.php:159
+msgid "Last synced date and time."
+msgstr "Fecha y hora de la última sincronización."
+
+#: src/API/Site/Controllers/Ads/RecommendationsController.php:153
+msgid "Status of the campaign."
+msgstr "Estado de la campaña."
+
+#: src/API/Site/Controllers/Ads/RecommendationsController.php:149
+msgid "Campaign name associated with the recommendation."
+msgstr "Nombre de la campaña asociada a la recomendación."
+
+#: src/API/Site/Controllers/Ads/RecommendationsController.php:145
+msgid "Campaign ID associated with the recommendation."
+msgstr "ID de campaña asociado a la recomendación."
+
+#: src/API/Site/Controllers/Ads/RecommendationsController.php:141
+msgid "Resource name of the recommendation."
+msgstr "Nombre del recurso de la recomendación."
+
+#: src/API/Site/Controllers/Ads/RecommendationsController.php:137
+msgid "Recommendation type."
+msgstr "Tipo de recomendación."
+
+#: src/API/Site/Controllers/Ads/RecommendationsController.php:133
+msgid "Recommendation ID."
+msgstr "ID de la recomendación."
+
+#: src/API/Site/Controllers/Ads/RecommendationsController.php:80
+msgid "Filter recommendations by unique id"
+msgstr "Filtrar recomendaciones por id único"
+
+#: src/API/Site/Controllers/Ads/RecommendationsController.php:73
+msgid "Filter recommendations by type"
+msgstr "Filtrar recomendaciones por tipo"
+
+#: src/Ads/AdsRecommendationsService.php:164
+msgid "Unable to retrieve Google Ads recommendations."
+msgstr "No se han podido recuperar las recomendaciones de Google Ads."
+
+#: src/API/Site/Controllers/Ads/AdsSettingsController.php:64
+msgid "Not Allowed."
+msgstr "No tienes permisos."
+
+#: src/API/Site/Controllers/Ads/BudgetMetricsController.php:161
+msgid "Budget we requested metrics for."
+msgstr "Presupuesto para el que solicitamos métricas."
+
+#: src/API/Site/Controllers/Ads/BudgetMetricsController.php:155
+msgid "The currency to use for the metrics."
+msgstr "La moneda a utilizar para las métricas."
+
+#: src/API/Site/Controllers/ConnectController.php:103
+msgid "Status of the connection request."
+msgstr "Estado de la solicitud de conexión."
+
+#: src/API/Site/Controllers/ConnectController.php:83
+msgid "Account connection triggered successfully."
+msgstr "La conexión a la cuenta se ha disparado correctamente."
+
+#: src/API/Google/BudgetRecommendations.php:157 js/build/commons.js:1
+#: js/build/price-benchmark.js:1
+msgid "High"
+msgstr "Alto"
+
+#: src/API/Google/BudgetRecommendations.php:160 js/build/commons.js:1
+#: js/build/price-benchmark.js:1
+msgid "Low"
+msgstr "Bajo"
+
+#: src/API/Site/Controllers/MerchantCenter/PriceBenchmarksController.php:279
+msgid "Current conversions."
+msgstr "Conversiones actuales."
+
+#: src/API/Site/Controllers/MerchantCenter/PriceBenchmarksController.php:275
+msgid "Click-through rate."
+msgstr "Tasa de clics."
+
+#: src/API/Site/Controllers/MerchantCenter/PriceBenchmarksController.php:271
+msgid "Current impressions."
+msgstr "Impresiones actuales."
+
+#: src/API/Site/Controllers/MerchantCenter/PriceBenchmarksController.php:267
+msgid "Current clicks."
+msgstr "Clics actuales."
+
+#: src/API/Site/Controllers/MerchantCenter/PriceBenchmarksController.php:243
+msgid "Current price of the product on Google."
+msgstr "Precio actual del producto en Google."
+
+#: src/API/Site/Controllers/MerchantCenter/PriceBenchmarksController.php:239
+msgid "Currency code."
+msgstr "Código de la moneda."
+
+#: src/API/Site/Controllers/MerchantCenter/PriceBenchmarksController.php:230
+msgid "Effectiveness score."
+msgstr "Puntuación de efectividad."
+
+#: src/API/Site/Controllers/MerchantCenter/PriceBenchmarksController.php:218
+msgid "Product details."
+msgstr "Detalles del producto."
+
+#: src/API/Site/Controllers/MerchantCenter/PriceBenchmarksController.php:181
+msgid "The Id of the product."
+msgstr "El Id del producto."
+
+#: src/API/Site/Controllers/MerchantCenter/PriceBenchmarksController.php:155
+msgid "Limit results to those matching a string."
+msgstr "Limitar los resultados a aquellos que coinciden con una cadena."
+
+#: src/API/Site/Controllers/MerchantCenter/PriceBenchmarksController.php:148
+msgid "Maximum number of items returned in the results."
+msgstr "Número máximo de elementos devueltos en los resultados."
+
+#: src/API/Google/MerchantPriceBenchmarks.php:196
+msgid "Unable to retrieve product metrics data"
+msgstr "No se han podido recuperar los datos de las métricas de los productos"
+
+#: src/API/Google/MerchantPriceBenchmarks.php:143
+msgid "Unable to retrieve price insights data"
+msgstr "No se han podido recuperar los datos de información sobre precios"
+
+#: src/API/Google/MerchantPriceBenchmarks.php:84
+msgid "Unable to retrieve price benchmark data"
+msgstr "No se han podido recuperar los datos de referencia de los precios"
 
 #: src/API/Google/Middleware.php:567
 msgid "Error updating merchant account in Google Partner APP."

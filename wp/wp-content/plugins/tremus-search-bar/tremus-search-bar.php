@@ -138,7 +138,7 @@ class Tremus_Search_Bar {
         ?>
         <div class="tremus-search-container">
             <form role="search" method="get" class="tremus-search-form" action="<?php echo esc_url(home_url('/')); ?>">
-                <input type="search" class="tremus-search-field" placeholder="<?php echo esc_attr_x('Search products…', 'placeholder', 'tremus-search-bar'); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+                <input type="search" class="tremus-search-field" placeholder="<?php echo esc_attr_x('Busca tus productos...', 'placeholder', 'tremus-search-bar'); ?>" value="<?php echo get_search_query(); ?>" name="s" />
                 <button type="submit" class="tremus-search-submit"><i class="fas fa-search"></i></button>
                 <input type="hidden" name="post_type" value="product" />
             </form>

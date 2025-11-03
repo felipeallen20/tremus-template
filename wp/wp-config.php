@@ -128,6 +128,18 @@ if ($configExtra = getenv_docker('WORDPRESS_CONFIG_EXTRA', '')) {
 	eval($configExtra);
 }
 
+// Activar el modo de depuración de WordPress
+define( 'WP_DEBUG', true );
+
+// Mostrar los errores en pantalla (si PHP_INI_DISPLAY_ERRORS=Off)
+define( 'WP_DEBUG_DISPLAY', true ); 
+
+// Guardar los errores en un archivo de registro (wp-content/debug.log)
+define( 'WP_DEBUG_LOG', true ); 
+
+// Desactivar el uso de versiones minificadas de JS/CSS
+define( 'SCRIPT_DEBUG', true );
+
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
