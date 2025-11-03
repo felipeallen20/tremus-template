@@ -125,40 +125,43 @@ class WPRS_Plugin {
         </div>
 
         <?php
-        // Muestra las últimas 3 reseñas
-        $recent_reviews_args = array(
-            'post_id' => $product_id,
-            'number'  => 3,
-            'status'  => 'approve',
-            'type'    => 'review',
-            'meta_key' => 'rating'
-        );
-        $recent_reviews = get_comments($recent_reviews_args);
+        if (!$simple) {
+            // Muestra las últimas 4 reseñas
+            $recent_reviews_args = array(
+                'post_id' => $product_id,
+                'number'  => 4,
+                'status'  => 'approve',
+                'type'    => 'review',
+                'meta_key' => 'rating'
+            );
+            $recent_reviews = get_comments($recent_reviews_args);
 
-        if ($recent_reviews) {
-            echo '<div class="wprs-recent-reviews-container">';
-            echo '<h3>Reseñas Recientes</h3>';
-            foreach ($recent_reviews as $review) {
-                $rating = get_comment_meta($review->comment_ID, 'rating', true);
-                $title = get_comment_meta($review->comment_ID, 'title', true);
-                ?>
-                <div class="wprs-review-item" data-review-id="<?php echo $review->comment_ID; ?>">
-                    <div class="wprs-review-title"><strong><?php echo esc_html($title); ?></strong></div>
-                    <div class="wprs-review-author">por <?php echo esc_html($review->comment_author); ?></div>
-                    <div class="wprs-review-rating">
-                        <?php for ($i = 1; $i <= 5; $i++): ?>
-                            <span class="wprs-star <?php echo ($i <= $rating) ? 'filled' : ''; ?>">&#9733;</span>
-                        <?php endfor; ?>
+            if ($recent_reviews) {
+                echo '<div class="wprs-recent-reviews-container">';
+                echo '<h3>Reseñas Recientes</h3>';
+                foreach ($recent_reviews as $review) {
+                    $rating = get_comment_meta($review->comment_ID, 'rating', true);
+                    $title = get_comment_meta($review->comment_ID, 'title', true);
+                    $content = !empty($review->comment_content) ? $review->comment_content : 'Sin comentario';
+                    ?>
+                    <div class="wprs-review-item" data-review-id="<?php echo $review->comment_ID; ?>">
+                        <div class="wprs-review-title"><strong><?php echo esc_html($title); ?></strong></div>
+                        <div class="wprs-review-author">por <?php echo esc_html($review->comment_author); ?></div>
+                        <div class="wprs-review-rating">
+                            <?php for ($i = 1; $i <= 5; $i++): ?>
+                                <span class="wprs-star <?php echo ($i <= $rating) ? 'filled' : ''; ?>">&#9733;</span>
+                            <?php endfor; ?>
+                        </div>
+                        <div class="wprs-review-content"><?php echo wpautop(esc_html($content)); ?></div>
+
+                        <?php if (is_user_logged_in() && get_current_user_id() == $review->user_id): ?>
+                            <button class="wprs-edit-review-btn">Editar Reseña</button>
+                        <?php endif; ?>
                     </div>
-                    <div class="wprs-review-content"><?php echo wpautop(esc_html($review->comment_content)); ?></div>
-
-                    <?php if (is_user_logged_in() && get_current_user_id() == $review->user_id): ?>
-                        <button class="wprs-edit-review-btn">Editar Reseña</button>
-                    <?php endif; ?>
-                </div>
-                <?php
+                    <?php
+                }
+                echo '</div>';
             }
-            echo '</div>';
         }
         ?>
         <?php
