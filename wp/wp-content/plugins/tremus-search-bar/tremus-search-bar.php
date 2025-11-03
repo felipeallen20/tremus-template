@@ -25,22 +25,41 @@ class Tremus_Search_Bar {
         }
 
         $search_term = sanitize_text_field($_POST['search_term']);
+        $limit = 5;
 
-        // Search for products
-        $product_args = array(
-            'post_type' => 'product',
-            'posts_per_page' => 5,
-            's' => $search_term,
-            'meta_query' => array(
-                'relation' => 'OR',
+        // --- Refactored Product Search Logic ---
+
+        // 1. Search by keyword (s)
+        $keyword_args = array(
+            'post_type'      => 'product',
+            'posts_per_page' => $limit,
+            's'              => $search_term,
+            'fields'         => 'ids',
+        );
+        $keyword_query = new WP_Query($keyword_args);
+        $product_ids = $keyword_query->posts;
+
+        // 2. Search by SKU
+        $sku_args = array(
+            'post_type'      => 'product',
+            'posts_per_page' => $limit,
+            'meta_query'     => array(
                 array(
-                    'key' => '_sku',
-                    'value' => $search_term,
+                    'key'     => '_sku',
+                    'value'   => $search_term,
                     'compare' => 'LIKE',
                 ),
             ),
-            'tax_query' => array(
-                'relation' => 'OR',
+            'fields'         => 'ids',
+        );
+        $sku_query = new WP_Query($sku_args);
+        $product_ids = array_merge($product_ids, $sku_query->posts);
+
+        // 3. Search by Tag
+        $tag_args = array(
+            'post_type'      => 'product',
+            'posts_per_page' => $limit,
+            'tax_query'      => array(
                 array(
                     'taxonomy' => 'product_tag',
                     'field'    => 'name',
@@ -48,24 +67,40 @@ class Tremus_Search_Bar {
                     'operator' => 'LIKE',
                 ),
             ),
+            'fields'         => 'ids',
         );
-        $products_query = new WP_Query($product_args);
+        $tag_query = new WP_Query($tag_args);
+        $product_ids = array_merge($product_ids, $tag_query->posts);
+
+        // 4. Merge, unique, and limit results
+        $unique_product_ids = array_unique($product_ids);
+        $final_product_ids = array_slice($unique_product_ids, 0, $limit);
+
         $products = array();
-        if ($products_query->have_posts()) {
-            while ($products_query->have_posts()) {
-                $products_query->the_post();
-                $product = wc_get_product(get_the_ID());
-                $products[] = array(
-                    'id' => get_the_ID(),
-                    'title' => get_the_title(),
-                    'url' => get_the_permalink(),
-                    'image' => get_the_post_thumbnail_url(get_the_ID(), 'thumbnail'),
-                    'price' => $product->get_price_html(),
-                    'on_sale' => $product->is_on_sale(),
-                );
+        if (!empty($final_product_ids)) {
+            $final_args = array(
+                'post_type' => 'product',
+                'post__in'  => $final_product_ids,
+                'orderby'   => 'post__in',
+            );
+            $products_query = new WP_Query($final_args);
+
+            if ($products_query->have_posts()) {
+                while ($products_query->have_posts()) {
+                    $products_query->the_post();
+                    $product = wc_get_product(get_the_ID());
+                    $products[] = array(
+                        'id'      => get_the_ID(),
+                        'title'   => get_the_title(),
+                        'url'     => get_the_permalink(),
+                        'image'   => get_the_post_thumbnail_url(get_the_ID(), 'thumbnail'),
+                        'price'   => $product->get_price_html(),
+                        'on_sale' => $product->is_on_sale(),
+                    );
+                }
             }
+            wp_reset_postdata();
         }
-        wp_reset_postdata();
 
         // Search for categories
         $category_args = array(
@@ -89,6 +124,7 @@ class Tremus_Search_Bar {
     }
 
     public function enqueue_frontend_assets() {
+        wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
         wp_enqueue_style('tremus-style', plugin_dir_url(__FILE__) . 'tremus-style.css');
         wp_enqueue_script('tremus-frontend', plugin_dir_url(__FILE__) . 'tremus-frontend.js', array('jquery'), null, true);
         wp_localize_script('tremus-frontend', 'tremus_ajax', array(
@@ -103,7 +139,7 @@ class Tremus_Search_Bar {
         <div class="tremus-search-container">
             <form role="search" method="get" class="tremus-search-form" action="<?php echo esc_url(home_url('/')); ?>">
                 <input type="search" class="tremus-search-field" placeholder="<?php echo esc_attr_x('Search products…', 'placeholder', 'tremus-search-bar'); ?>" value="<?php echo get_search_query(); ?>" name="s" />
-                <button type="submit" class="tremus-search-submit">&#128269;</button>
+                <button type="submit" class="tremus-search-submit"><i class="fas fa-search"></i></button>
                 <input type="hidden" name="post_type" value="product" />
             </form>
             <div class="tremus-search-results"></div>

@@ -2,8 +2,8 @@
 .tremus-search-container {
     position: relative;
     width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 800px; /* Increased width */
+    margin: 0 auto; /* No top/bottom margin */
 }
 .tremus-search-form {
     display: flex;
@@ -15,6 +15,7 @@
     border: 1px solid #ccc;
     padding: 10px;
     font-size: 16px;
+    width: 100%; /* Ensure it takes full width */
 }
 .tremus-search-submit {
     background-color: #f0f0f0;
