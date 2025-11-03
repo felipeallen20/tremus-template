@@ -164,32 +164,7 @@ global $product;
 
 	<div class="col large-12">
 		<h2>Productos Relacionados</h2>
-		<?php
-		// Obtiene los productos relacionados (máximo 4)
-		$related_ids = wc_get_related_products( $product->get_id(), 4 );
-
-		if ( $related_ids ) {
-			$args = array(
-				'post_type'      => 'product',
-				'post__in'       => $related_ids,
-				'posts_per_page' => 4,
-				'orderby'        => 'rand',
-			);
-
-			$related_query = new WP_Query( $args );
-
-			if ( $related_query->have_posts() ) : ?>
-				<ul class="products columns-4">
-					<?php while ( $related_query->have_posts() ) : $related_query->the_post(); ?>
-						<?php wc_get_template_part( 'content', 'product' ); ?>
-					<?php endwhile; ?>
-				</ul>
-			<?php endif;
-			wp_reset_postdata();
-		} else {
-			echo '<p>No hay productos relacionados.</p>';
-		}
-		?>
+		<?php echo do_shortcode('[easy_related_products id="' . $product->get_id() . '"]'); ?>
 	</div>
 
 	<div class="col large-12">
