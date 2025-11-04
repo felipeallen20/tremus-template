@@ -1,4 +1,7 @@
 <?php
+// Include the custom shipping method class
+require_once get_stylesheet_directory() . '/inc/class-wc-shipping-pickup-in-store.php';
+
 define('WP_DEBUG', true);
 
 // === Cargar CSS personalizado para los shortcodes Tremus ===
@@ -332,3 +335,74 @@ add_action('template_redirect', function() {
     // Establecer cookie por 24h (86400 segundos)
     setcookie($cookie_name, $cookie_value, time() + 86400, "/");
 });
+
+function enqueue_checkout_scripts() {
+    if (is_checkout()) {
+        wp_enqueue_style(
+            'checkout-styles',
+            get_stylesheet_directory_uri() . '/assets/css/checkout-styles.css',
+            array(),
+            '1.0.0'
+        );
+
+        wp_enqueue_script(
+            'checkout-scripts',
+            get_stylesheet_directory_uri() . '/assets/js/checkout-scripts.js',
+            array('jquery'),
+            '1.0.0',
+            true
+        );
+
+        wp_localize_script(
+            'checkout-scripts',
+            'checkout_scripts_vars',
+            array(
+                'pickup_locations' => get_option('woocommerce_pickup_locations', array())
+            )
+        );
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_checkout_scripts');
+
+// Guardar el campo de punto de retiro en los metadatos del pedido
+function save_pickup_location_to_order_meta($order_id) {
+    if (!empty($_POST['pickup_location'])) {
+        $pickup_location_id = sanitize_text_field($_POST['pickup_location']);
+        $pickup_locations = get_option('woocommerce_pickup_locations');
+
+        if (isset($pickup_locations[$pickup_location_id])) {
+            $location_details = $pickup_locations[$pickup_location_id];
+            $location_string = sprintf(
+                '%s - %s, %s, %s',
+                $location_details['name'],
+                $location_details['address'],
+                $location_details['commune'],
+                $location_details['region']
+            );
+            update_post_meta($order_id, '_pickup_location', $location_string);
+        }
+    }
+}
+add_action('woocommerce_checkout_update_order_meta', 'save_pickup_location_to_order_meta');
+
+// Mostrar el punto de retiro en la página de detalles del pedido en el admin
+function display_pickup_location_in_admin_order($order) {
+    $pickup_location = get_post_meta($order->get_id(), '_pickup_location', true);
+    if (!empty($pickup_location)) {
+        echo '<p><strong>' . __('Punto de Retiro', 'woocommerce') . ':</strong> ' . esc_html($pickup_location) . '</p>';
+    }
+}
+add_action('woocommerce_admin_order_data_after_shipping_address', 'display_pickup_location_in_admin_order');
+
+// Añadir el punto de retiro a los correos electrónicos de WooCommerce
+function add_pickup_location_to_emails($order, $sent_to_admin, $plain_text) {
+    $pickup_location = get_post_meta($order->get_id(), '_pickup_location', true);
+    if (!empty($pickup_location)) {
+        if ($plain_text) {
+            echo "\n" . __('Punto de Retiro', 'woocommerce') . ': ' . esc_html($pickup_location) . "\n";
+        } else {
+            echo '<p><strong>' . __('Punto de Retiro', 'woocommerce') . ':</strong> ' . esc_html($pickup_location) . '</p>';
+        }
+    }
+}
+add_action('woocommerce_email_after_order_details', 'add_pickup_location_to_emails', 10, 3);

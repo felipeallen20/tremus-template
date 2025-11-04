@@ -1,0 +1,72 @@
+body.woocommerce-checkout {
+    background-color: #152635;
+    color: #ffffff;
+}
+
+.woocommerce-checkout #customer_details, .woocommerce-checkout #order_review {
+    background-color: #1e3a56;
+    padding: 20px;
+    border: none;
+}
+
+.woocommerce-checkout h2, .woocommerce-checkout h3 {
+    color: #ffffff;
+}
+
+.woocommerce-checkout .form-row label {
+    color: #bfc6ce;
+}
+
+.woocommerce-checkout .input-text, .woocommerce-checkout select {
+    background-color: #152635;
+    color: #ffffff;
+    border: 1px solid #1e3a56;
+    border-radius: 0;
+}
+
+.woocommerce-checkout .button {
+    background-color: #1e3a56;
+    color: #ffffff;
+    border: none;
+    border-radius: 0;
+    padding: 15px 30px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.woocommerce-checkout .button:hover {
+    background-color: #2b507b;
+}
+
+.woocommerce-checkout .button.alt {
+    background-color: #2b507b;
+}
+
+.step-headers {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.step-header {
+    flex-grow: 1;
+    text-align: center;
+    padding: 10px;
+    background-color: #1e3a56;
+    color: #bfc6ce;
+    border: 1px solid #152635;
+    cursor: pointer;
+}
+
+.step-header.active {
+    background-color: #2b507b;
+    color: #ffffff;
+}
+
+.delivery-options {
+    margin-bottom: 20px;
+}
+
+.delivery-options label {
+    margin-right: 20px;
+}
