@@ -1,0 +1,12 @@
+// ------------------------------------
+// CHECKOUT PAYMENT METHODS
+// ------------------------------------
+
+body#{ $_body-theme-selector } .woocommerce table.shop_table > thead > tr > th .woocommerce-Price-amount,
+body#{ $_body-theme-selector } .woocommerce table.shop_table > thead > tr > td .woocommerce-Price-amount,
+body#{ $_body-theme-selector } .woocommerce table.shop_table > tbody > tr > td .woocommerce-Price-amount,
+body#{ $_body-theme-selector } .woocommerce table.shop_table > tbody > tr > th .woocommerce-Price-amount,
+body#{ $_body-theme-selector } .woocommerce table.shop_table > tfoot > tr > td .woocommerce-Price-amount,
+body#{ $_body-theme-selector } .woocommerce table.shop_table > tfoot > tr > th .woocommerce-Price-amount {
+	color: inherit;
+}

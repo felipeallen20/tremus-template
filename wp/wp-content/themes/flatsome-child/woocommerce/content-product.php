@@ -66,18 +66,9 @@ $add_text = 'AGREGAR AL CARRITO (+)';
 				<div class="tremus-product-price"><?php echo wp_kses_post( $price_html ); ?></div>
 			<?php endif; ?>
 
-			<?php
-			// Obtener los campos personalizados
-			$precio_x_unidad = get_post_meta( $product_id, 'precio_x_unidad', true );
-			$unidad          = get_post_meta( $product_id, 'unidad', true );
-
-			// Si existen ambos, mostrarlos juntos
-			if ( $precio_x_unidad && $unidad ) :
-				?>
-				<span class="tremus-precio-unidad">
-					<?php echo esc_html( $precio_x_unidad . ' x ' . $unidad ); ?>
-				</span>
-			<?php endif; ?>
+			<div class="tremus-precio-unidad">
+				<?php echo do_shortcode('[easy_price_per_unit id=' . $product->get_id() . '"]'); ?>
+			</div>
 		</div>
 
 		<!-- Botón -->

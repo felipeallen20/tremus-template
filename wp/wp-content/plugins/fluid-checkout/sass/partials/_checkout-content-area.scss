@@ -1,0 +1,121 @@
+// ------------------------------------
+// CHECKOUT CONTENT AREA
+// ------------------------------------
+html,
+body#{ $_body-page-selector } {
+	overflow-x: hidden; // Fallback value to prevent horizontal scroll on IE, EDGE and Safari
+	overflow-x: clip; // Prevent horizontal scroll on all modern browsers
+}
+
+
+
+// Remove the `alignwide` class styles from the classic shortcode block.
+body#{ $_body-page-selector } div[data-block-name="woocommerce/classic-shortcode"].alignwide {
+	left: 0 !important; // Needed to override theme styles for the class `.alignwide`
+	width: 100% !important; // Needed to override theme styles for the class `.alignwide`
+}
+
+
+
+// Remove margins inherited from some themes
+body#{ $_body-page-selector } .fc-content,
+form.woocommerce-checkout {
+	display: block !important; // Needed to override theme styles breaking the layout
+	margin: 0 auto;
+	overflow: visible !important; // Needed to override theme styles
+}
+
+.fc-content form.woocommerce-checkout {
+	clear: both;
+	float: none;
+	margin: 0 !important; // Needed to override theme styles breaking the layout
+}
+.fc-content form.woocommerce-checkout:after {
+	@include clearfix();
+}
+
+
+
+body#{ $_body-page-selector } #main.fc-main {
+	box-sizing: border-box;
+	position: static;
+	float: none;
+	margin: 0 auto;
+	padding: $checkout-header-height $container-spacing-mobile 0;
+	width: 100%;
+	max-width: $container-width-mobile;
+
+	// max-width
+	@media (#{$bp-larger-than-tablet}) { max-width: $container-width-tablet; }
+	@media (#{$bp-larger-than-desktop}) { max-width: $container-width-desktop; }
+	@media (#{$bp-larger-than-desktop-medium}) { max-width: $container-width-desktop-medium; }
+	@media (#{$bp-larger-than-desktop-large}) { max-width: $container-width-desktop-large; }
+	@media (#{$bp-larger-than-desktop-extra-large}) { max-width: $container-width-desktop-extra-large; }
+
+	// padding
+	@media (#{$bp-larger-than-tablet}) { padding: $checkout-header-height $container-spacing-tablet 0; }
+	@media (#{$bp-larger-than-desktop}) { padding: 0 $container-spacing-desktop 0; }
+	@media (#{$bp-larger-than-desktop-medium}) { padding: 0 $container-spacing-desktop-medium 0; }
+	@media (#{$bp-larger-than-desktop-large}) { padding: 0 $container-spacing-desktop-large 0; }
+	@media (#{$bp-larger-than-desktop-extra-large}) { padding: 0 $container-spacing-desktop-extra-large 0; }
+}
+
+body#{ $_body-page-selector }.has-flyout--open #main.fc-main {
+	z-index: unset;
+}
+
+
+
+body#{ $_body-page-selector } .fc-content,
+body#{ $_body-page-selector } .fc-progress-bar,
+body#{ $_body-page-selector } .fc-checkout-notices,
+body#{ $_body-page-selector } .fc-wrapper {
+	&,
+	& * {
+		box-sizing: border-box !important; // Needed to override theme styles breaking the layout
+	}
+}
+
+
+
+body#{ $_body-page-selector } .fc-content {
+	float: none !important; // Needed to override theme styles breaking the layout
+	margin: 0 auto;
+	padding-bottom: $global-spacing-large;
+	width: 100%;
+	border: 0;
+	text-align: left;
+}
+body#{ $_body-page-selector } .fc-content.fc-container {
+	padding: 0 $container-spacing-mobile $global-spacing-large;
+
+	// max-width
+	@media (#{$bp-larger-than-desktop}) { max-width: $container-width-desktop; }
+	@media (#{$bp-larger-than-desktop-medium}) { max-width: $container-width-desktop-medium; }
+	@media (#{$bp-larger-than-desktop-large}) { max-width: $container-width-desktop-large; }
+	@media (#{$bp-larger-than-desktop-extra-large}) { max-width: $container-width-desktop-extra-large; }
+
+	// padding
+	@media (#{$bp-larger-than-tablet}) { padding: 0 $container-spacing-tablet $global-spacing-large; }
+	@media (#{$bp-larger-than-desktop}) { padding: 0 $container-spacing-desktop $global-spacing-large; }
+	@media (#{$bp-larger-than-desktop-medium}) { padding: 0 $container-spacing-desktop-medium $global-spacing-large; }
+	@media (#{$bp-larger-than-desktop-large}) { padding: 0 $container-spacing-desktop-large $global-spacing-large; }
+	@media (#{$bp-larger-than-desktop-extra-large}) { padding: 0 $container-spacing-desktop-extra-large $global-spacing-large; }
+}
+
+body#{ $_body-page-selector }.has-checkout-header .fc-content {
+	@media (#{$bp-larger-than-desktop}) {
+		padding-top: $global-spacing-extra-small;
+	}
+}
+
+
+
+body#{ $_body-page-selector } .fc-content div.woocommerce:not( div.woocommerce div.woocommerce ) {
+	position: static;
+	max-width: 100%;
+
+	@media (#{$bp-larger-than-desktop-medium}) {
+		margin: 0 auto;
+	}
+}

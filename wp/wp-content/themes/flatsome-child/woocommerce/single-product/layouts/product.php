@@ -54,16 +54,10 @@ global $product;
 			</div>
 
 			<!-- Precio por unidad  -->
-			<?php
-			$precio_x_unidad = get_post_meta( $product->get_id(), 'precio_x_unidad', true );
-			$unidad          = get_post_meta( $product->get_id(), 'unidad', true );
 
-			if ( $precio_x_unidad && $unidad ) :
-			?>
-				<div class="tremus-precio-unidad">
-					<span><?php echo esc_html( $precio_x_unidad . ' x ' . $unidad ); ?></span>
-				</div>
-			<?php endif; ?>
+			<div class="tremus-precio-unidad">
+				<?php echo do_shortcode('[easy_price_per_unit id=' . $product->get_id() . '"]'); ?>
+			</div>
 
 			<!-- Botón de compra -->
 			<div class="product-cart">
