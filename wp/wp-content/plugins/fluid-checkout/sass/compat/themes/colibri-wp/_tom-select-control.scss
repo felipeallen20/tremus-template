@@ -1,8 +1,0 @@
-// ------------------------------------
-// TOM SELECT CONTROL
-// ------------------------------------
-
-body#{ $_body-theme-selector } .ts-control {
-	padding-#{ $alignment-right }: $global-spacing;
-	padding-#{ $alignment-left }: $form-field-padding-left;
-}

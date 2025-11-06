@@ -1,8 +1,0 @@
-// ------------------------------------
-// CHECKOUT COUPON CODE
-// ------------------------------------
-
-body#{ $_body-theme-selector } .fc-wrapper .fc-coupon-codes__coupon:before,
-body#{ $_body-theme-selector } .fc-wrapper .fc-coupon-codes__coupon:after {
-	content: none;
-}
