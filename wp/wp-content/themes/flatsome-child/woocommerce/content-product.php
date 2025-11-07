@@ -1,86 +1,102 @@
 <?php
 /**
- * Tremus - Custom WooCommerce product card
+ * The template for displaying product content within loops
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/content-product.php.
+ *
+ * @see     https://docs.woocommerce.com/document/template-structure/
+ * @package WooCommerce/Templates
+ * @version 3.6.0
  */
 
 defined( 'ABSPATH' ) || exit;
 
 global $product;
 
-// Asegurar producto válido y visible
-if ( ! $product || ! is_a( $product, 'WC_Product' ) || ! $product->is_visible() ) {
+// Ensure visibility.
+if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 
 $product_id    = $product->get_id();
-$product_link  = get_permalink( $product_id );
-$product_title = get_the_title( $product_id );
-$thumb_html    = $product->get_image( 'woocommerce_thumbnail' );
+$link          = esc_url($product->get_permalink());
+$title         = esc_html($product->get_name());
+$image         = $product->get_image('woocommerce_thumbnail');
 $price_html    = $product->get_price_html();
+$regular_price = (float) $product->get_regular_price();
+$sale_price    = (float) $product->get_sale_price();
+$discount_html = '';
 
-// Asegurar descripción corta sin romper
-$short_desc_raw = $product->get_short_description();
-if ( empty( $short_desc_raw ) ) {
-	$short_desc_raw = get_the_excerpt( $product_id );
+if ($sale_price && $regular_price > 0 && $sale_price < $regular_price) {
+    $discount_percent = round((($regular_price - $sale_price) / $regular_price) * 100);
+    $discount_html = '<div class="tremus-discount">Oferta - Ahorra ' . $discount_percent . '%</div>';
 }
-$short_desc = wp_trim_words( wp_strip_all_tags( $short_desc_raw ), 20, '...' );
-
-// Botón de agregar al carrito (manejo seguro según tipo)
-if ( $product->is_type( 'simple' ) || $product->is_type( 'downloadable' ) ) {
-	$add_url   = esc_url( $product->add_to_cart_url() );
-	$add_class = 'button tremus-product-add-to-cart ajax_add_to_cart';
-} else {
-	$add_url   = esc_url( $product_link );
-	$add_class = 'button tremus-product-add-to-cart';
-}
-
-$add_text = 'AGREGAR AL CARRITO (+)';
 ?>
+<li <?php wc_product_class( 'tremus-product', $product ); ?>>
+    <a href="<?php echo $link; ?>" class="tremus-product-link">
+        <div class="tremus-product-image">
+            <?php echo $image; ?>
+        </div>
+    </a>
 
-<li <?php wc_product_class( 'tremus-product-card', $product ); ?>>
-	<div class="tremus-product-inner">
+    <div class="tremus-product-content">
+        <a href="<?php echo $link; ?>">
+            <h3 class="tremus-product-title"><?php echo $title; ?></h3>
+        </a>
 
-		<!-- Imagen -->
-		<a href="<?php echo esc_url( $product_link ); ?>" class="tremus-product-thumb-link" aria-label="<?php echo esc_attr( $product_title ); ?>">
-			<div class="tremus-product-thumb">
-				<?php echo $thumb_html; ?>
-			</div>
-		</a>
+        <?php echo $discount_html; ?>
 
-		<!-- Texto -->
-		<div class="tremus-product-content">
-			<a href="<?php echo esc_url( $product_link ); ?>" class="tremus-product-title-link">
-				<h3 class="tremus-product-title"><?php echo esc_html( $product_title ); ?></h3>
-			</a>
+        <?php
+            // ⭐ Mostrar estrellas del plugin arriba del precio
+            echo do_shortcode('[product_stars id="' . $product_id . '" simple="true"]');
+        ?>
 
-			<?php if ( $short_desc ) : ?>
-				<p class="tremus-product-description"><?php echo esc_html( $short_desc ); ?></p>
-			<?php endif; ?>
+        <div class="tremus-product-price">
+            <?php echo $price_html; ?>
+        </div>
 
-			<?php
-				// ⭐ Mostrar estrellas del plugin arriba del precio
-				echo do_shortcode('[product_stars id="' . $product_id . '" simple="true"]');
-			?>
+        <div class="tremus-precio-unidad">
+            <?php echo do_shortcode('[easy_price_per_unit id=' . $product->get_id() . '"]'); ?>
+        </div>
 
-			<?php if ( $price_html ) : ?>
-				<div class="tremus-product-price"><?php echo wp_kses_post( $price_html ); ?></div>
-			<?php endif; ?>
-
-			<div class="tremus-precio-unidad">
-				<?php echo do_shortcode('[easy_price_per_unit id=' . $product->get_id() . '"]'); ?>
-			</div>
-		</div>
-
-		<!-- Botón -->
-		<div class="tremus-product-button-wrap">
-			<a href="<?php echo $add_url; ?>"
-			   data-quantity="1"
-			   data-product_id="<?php echo esc_attr( $product_id ); ?>"
-			   data-product_sku="<?php echo esc_attr( $product->get_sku() ); ?>"
-			   class="<?php echo esc_attr( $add_class ); ?>">
-			   <?php echo esc_html( $add_text ); ?>
-			</a>
-		</div>
-
-	</div>
+        <div class="tremus-product-qty-add">
+            <div class="tremus-product-qty">
+                 <input type="number"
+                    id="tremus-product-qty-<?php echo esc_attr( $product_id ); ?>"
+                    class="input-text qty text tremus-qty-input"
+                    name="quantity"
+                    value="1"
+                    title="<?php echo esc_attr_x( 'Qty', 'Product quantity input tooltip', 'woocommerce' ); ?>"
+                    size="4"
+                    min="<?php echo esc_attr( $product->get_min_purchase_quantity() ); ?>"
+                    max="<?php echo esc_attr( $product->get_max_purchase_quantity() ); ?>"
+                    step="<?php echo esc_attr( $product->get_quantity_step() ); ?>"
+                    inputmode="numeric" />
+                <div class="tremus-qty-buttons">
+                    <button type="button" class="tremus-qty-btn increase" data-target="tremus-product-qty-<?php echo esc_attr( $product_id ); ?>">▲</button>
+                    <button type="button" class="tremus-qty-btn decrease" data-target="tremus-product-qty-<?php echo esc_attr( $product_id ); ?>">▼</button>
+                </div>
+            </div>
+            <div class="tremus-add-btn">
+                <?php
+                    // Use site_url() to create a dynamic path to the image
+                    $cart_icon_url = site_url('/wp-content/uploads/2025/10/Vector-2.svg');
+                    echo apply_filters(
+                        'woocommerce_loop_add_to_cart_link', // WooCommerce hook
+                        sprintf(
+                            // The data-quantity attribute will be updated by JS
+                            '<a href="%s" data-quantity="1" data-product_id="%s" data-product_sku="%s" class="%s add-to-cart-btn"><img src="%s" alt="%s" class="cart-icon-white"></a>',
+                            esc_url( $product->add_to_cart_url() ),
+                            esc_attr( $product->get_id() ),
+                            esc_attr( $product->get_sku() ),
+                            $product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button ajax_add_to_cart' : '',
+                            esc_url( $cart_icon_url ),
+                            esc_attr( $product->add_to_cart_text() )
+                        ),
+                        $product
+                    );
+                ?>
+            </div>
+        </div>
+    </div>
 </li>
