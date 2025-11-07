@@ -63,6 +63,15 @@ function tremus_enqueue_custom_styles() {
     wp_localize_script('tremus-product-search', 'tremusSearch', array(
         'ajax_url' => admin_url('admin-ajax.php')
     ));
+
+    // JS para la tarjeta de producto personalizada (botones de cantidad)
+    wp_enqueue_script(
+        'tremus-custom-product-card',
+        get_stylesheet_directory_uri() . '/assets/js/custom-product.js',
+        array('jquery'),
+        '1.0.0',
+        true
+    );
 }
 add_action('wp_enqueue_scripts', 'tremus_enqueue_custom_styles');
 
