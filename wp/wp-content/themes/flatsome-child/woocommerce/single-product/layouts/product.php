@@ -151,14 +151,16 @@ global $product;
 	</section>
 
 	<div class="col large-12">
-		<h2>Valoraciones</h2>
-
-		<?php echo do_shortcode('[product_stars id="' . $product->get_id() . '"]'); ?>
-	</div>
-
-	<div class="col large-12">
-		<h2>Productos Relacionados</h2>
-		<?php echo do_shortcode('[easy_related_products id="' . $product->get_id() . '"]'); ?>
+		<?php
+			/**
+			 * woocommerce_after_single_product_summary hook
+			 *
+			 * @hooked woocommerce_output_product_data_tabs - 10
+			 * @hooked woocommerce_upsell_display - 15
+			 * @hooked woocommerce_output_related_products - 20
+			 */
+			do_action( 'woocommerce_after_single_product_summary' );
+		?>
 	</div>
 
 	<div class="col large-12">

@@ -10,80 +10,16 @@
 <div class="row category-page-row">
 
 		<div class="col large-3 hide-for-medium <?php flatsome_sidebar_classes(); ?>">
-			<form id="custom-filters" class="custom-shop-filters" method="GET" action="<?php echo get_permalink( wc_get_page_id( 'shop' ) ); ?>">
-				<!-- Filtro: Despacho -->
-				<div class="filter-section">
-					<label class="filter-option filter-shipping">
-					<input type="checkbox" name="envio[]" value="express"> Despacho express
-					</label>
-					<label class="filter-option filter-shipping">
-					<input type="checkbox" name="envio[]" value="tienda"> Retiro en Tienda
-					</label>
-				</div>
-
-				<!-- Filtro: Categorías dinámicas -->
+			<?php flatsome_sticky_column_open( 'category_sticky_sidebar' ); ?>
+			<div id="shop-sidebar" class="sidebar-inner col-inner">
 				<?php
-				$categories = get_terms(array(
-					'taxonomy' => 'product_cat',
-					'hide_empty' => true,
-					'parent' => 0,
-				));
+				  if(is_active_sidebar('shop-sidebar')) {
+				  		dynamic_sidebar('shop-sidebar');
+				  	} else{ echo '<p>You need to assign Widgets to <strong>"Shop Sidebar"</strong> in <a href="'.get_site_url().'/wp-admin/widgets.php">Appearance > Widgets</a> to show anything here</p>';
+				  }
 				?>
-				<div class="filter-section">
-					<h4 class="filter-title">Filtrar por categorías</h4>
-					<ul class="category-filter-list">
-					<?php foreach ($categories as $cat) : ?>
-						<li class="filter-item" data-category="<?php echo esc_attr($cat->slug); ?>">
-						<label class="filter-option">
-							<input type="checkbox" name="category[]" value="<?php echo esc_attr($cat->slug); ?>">
-							<?php echo esc_html($cat->name); ?>
-						</label>
-						<?php
-						$subcats = get_terms(array(
-							'taxonomy' => 'product_cat',
-							'hide_empty' => true,
-							'parent' => $cat->term_id,
-						));
-						if (!empty($subcats)) : ?>
-							<ul class="subcategory-list">
-							<?php foreach ($subcats as $sub) : ?>
-								<li>
-								<label class="filter-option sub">
-									<input type="checkbox" name="subcategory[]" value="<?php echo esc_attr($sub->slug); ?>">
-									<?php echo esc_html($sub->name); ?>
-								</label>
-								</li>
-							<?php endforeach; ?>
-							</ul>
-						<?php endif; ?>
-						</li>
-					<?php endforeach; ?>
-					</ul>
-				</div>
-
-				<!-- Filtro: Precio -->
-				<div class="filter-section">
-					<h4 class="filter-title">Filtrar precio</h4>
-					<label class="filter-option"><input type="checkbox" name="price[]" value="5000"> Menos de $5.000</label>
-					<label class="filter-option"><input type="checkbox" name="price[]" value="8000"> Menos de $8.000</label>
-					<label class="filter-option"><input type="checkbox" name="price[]" value="10000"> Menos de $10.000</label>
-					<label class="filter-option"><input type="checkbox" name="price[]" value="15000"> Menos de $15.000</label>
-				</div>
-
-				<!-- Filtro: Preferencia (maquetado, no funcional aún) -->
-				<div class="filter-section">
-					<h4 class="filter-title">Filtrar por preferencia</h4>
-					<label class="filter-option"><input type="checkbox" name="pref[]" value="comida-preparada"> Comida preparada</label>
-					<label class="filter-option"><input type="checkbox" name="pref[]" value="proteina"> Alto en proteína</label>
-					<label class="filter-option"><input type="checkbox" name="pref[]" value="gourmet"> Comida gourmet</label>
-					<label class="filter-option"><input type="checkbox" name="pref[]" value="keto"> Productos Keto</label>
-					<label class="filter-option"><input type="checkbox" name="pref[]" value="sin-azucar"> Sin azúcar</label>
-					<label class="filter-option"><input type="checkbox" name="pref[]" value="sin-gluten"> Sin gluten</label>
-					<label class="filter-option"><input type="checkbox" name="pref[]" value="veganos"> Veganos</label>
-					<label class="filter-option"><input type="checkbox" name="pref[]" value="vegetarianos"> Vegetarianos</label>
-				</div>
-
-			</form>
+			</div>
+			<?php flatsome_sticky_column_close( 'category_sticky_sidebar' ); ?>
 		</div>
 
 		<div class="col large-9">
